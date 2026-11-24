@@ -1,0 +1,65 @@
+/* Carbon Black refinement — restrained visual motifs from the approved Axiom reference. */
+:root{
+ --bg:#050607;--paper:#090b0e;--surface:#0c0f13;
+ --border:rgba(178,194,214,.12);--white:#f4f6fa;
+ --soft:#bcc4d0;--muted:#8995a5;
+ --blue:#8fb8e3;--indigo:#a69bc7;--cyan:#84bac5
+}
+html{background:#050607}
+body{background:#050607}
+body::before{
+ height:820px;
+ background:radial-gradient(ellipse 650px 420px at 85% 8%,rgba(45,67,88,.095),transparent 80%),radial-gradient(ellipse 550px 410px at 8% 16%,rgba(36,44,59,.10),transparent 82%)
+}
+.site-header{background:rgba(5,6,7,.93);border-bottom-color:rgba(178,192,216,.075)}
+.hero{min-height:650px}
+.visual-aura{background:radial-gradient(ellipse at 50% 55%,rgba(50,78,108,.10),transparent 65%),radial-gradient(ellipse at 70% 70%,rgba(96,79,122,.055),transparent 70%)}
+.dashboard-frame{background:#090c10;border-color:rgba(153,178,207,.25);box-shadow:0 45px 80px rgba(0,0,0,.65),0 0 56px rgba(62,97,145,.04)}
+.window-top{background:#090c10;border-bottom-color:rgba(134,164,199,.12)}
+.trust-strip{background:#080a0d;border-top-color:rgba(170,187,209,.08);border-bottom-color:rgba(170,187,209,.08)}
+.threat-panel{background:linear-gradient(147deg,rgba(18,22,28,.95),rgba(9,12,16,.96));border-color:rgba(168,187,209,.12)}
+.threat-panel:hover{border-color:rgba(141,177,214,.28)}
+.line-icon{background:rgba(93,128,165,.045)}
+.section-os{background:radial-gradient(ellipse 690px 440px at 81% 51%,rgba(39,53,69,.10),transparent 80%),#090b0e;border-color:rgba(166,187,206,.07)}
+.os-art::before{background:radial-gradient(ellipse,rgba(64,68,106,.10),transparent 68%)}
+.os-surface{background:linear-gradient(143deg,#11171d,#090b0f);border-color:rgba(168,187,212,.13)}
+.os-insight-mark{background:linear-gradient(135deg,#1a2836,#0c121a)}
+.section-offline{background:radial-gradient(ellipse 440px 330px at 22% 50%,rgba(49,59,79,.09),transparent 80%),#080a0c;border-color:rgba(171,192,210,.07)}
+.ring-three{background:rgba(65,89,127,.04)}
+.reporting{background:linear-gradient(120deg,rgba(17,21,26,.95),rgba(10,13,17,.97));border-color:rgba(164,185,207,.12)}
+.platforms-section{background:#090b0e;border-color:rgba(176,192,209,.07)}
+.platform-card{background:rgba(16,20,26,.8);border-color:rgba(164,184,207,.12)}
+.download-box{background:radial-gradient(ellipse 410px 270px at 95% 10%,rgba(53,60,91,.075),transparent 85%),linear-gradient(137deg,#11171d,#090c0f);border-color:rgba(155,186,209,.16)}
+.site-footer{background:#040506}
+/* Intelligence and community artwork is isolated from the rest of the site. */
+.ecosystem{grid-template-columns:1fr .98fr 1fr;gap:18px;padding:45px 0}
+.ecosystem-axis.ecosystem-visual{margin:0;position:relative;align-self:stretch;min-height:285px;display:flex;align-items:center;justify-content:center;flex-direction:column;isolation:isolate}
+.ecosystem-visual::before{content:"";position:absolute;inset:10% -4%;z-index:-1;background:radial-gradient(ellipse,rgba(50,79,125,.085),transparent 75%);pointer-events:none}
+.ecosystem-visual figcaption{font-weight:750;font-size:9px;letter-spacing:.14em;color:#8b9fb6;white-space:nowrap;text-align:center;margin-top:-10px}
+.ecosystem-outcomes .outcome{border-left:1px solid rgba(136,157,194,.10);padding-left:18px}
+.vendor-identity img{filter:brightness(.92)}
+.community-brand{position:relative;isolation:isolate;overflow:hidden;background:#090c10;border-color:rgba(174,196,220,.13);box-shadow:inset 0 1px 0 rgba(206,224,241,.025)}
+.community-wave{position:absolute;bottom:-2px;right:-4px;width:100%;height:auto;z-index:-1;opacity:.48;-webkit-mask-image:linear-gradient(0deg,#000 10%,transparent 97%);mask-image:linear-gradient(0deg,#000 10%,transparent 97%);filter:brightness(.75) saturate(.82)}
+.community-brand .community-emblem{position:relative;z-index:1;width:103px;height:103px;filter:drop-shadow(0 10px 23px rgba(3,31,38,.25))}
+.community-brand span,.community-brand small{position:relative;z-index:1}
+.community-brand small{color:#a6b2c3}
+.ecosystem-visual .synergy-stack{position:relative;display:block;width:100%;max-width:465px;aspect-ratio:520/310;overflow:visible}
+.synergy-plates{display:block;width:100%;height:100%;object-fit:contain;opacity:.9;filter:saturate(.78)}
+.synergy-shield{position:absolute;width:26%;max-width:115px;height:auto;top:25%;left:50%;transform:translateX(-50%);filter:drop-shadow(0 13px 24px rgba(0,0,0,.64))}
+@media(max-width:1050px){
+ .ecosystem{grid-template-columns:1fr .88fr 1fr;gap:11px}
+ .ecosystem-visual figcaption{font-size:8px;letter-spacing:.07em;white-space:normal}
+}
+@media(max-width:640px){
+ .ecosystem{grid-template-columns:1fr;gap:18px;padding:30px 0}
+ .ecosystem-axis.ecosystem-visual{order:1;min-height:225px;max-width:420px;width:100%;margin:0 auto}
+ .ecosystem-vendors{order:0}
+ .ecosystem-outcomes{order:2}
+ .ecosystem-visual figcaption{font-size:8.5px;letter-spacing:.12em}
+ .community-wave{min-width:100%;object-fit:cover}
+ .ecosystem-visual .synergy-stack{max-width:395px}
+}
+
+/* Coordinated OpenDKG identity: one icon + wordmark instead of duplicate text. */
+.community-brand .community-lockup{position:relative;z-index:1;width:min(385px,86%);height:auto;max-height:116px;object-fit:contain;filter:drop-shadow(0 12px 18px rgba(0,0,0,.35))}
+@media(max-width:640px){.community-brand .community-lockup{width:min(340px,88%);max-height:105px}}

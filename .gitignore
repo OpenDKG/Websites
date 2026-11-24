@@ -1,0 +1,23 @@
+# Build output
+dist/
+
+# Dependencies and caches
+node_modules/
+.cache/
+.parcel-cache/
+coverage/
+
+# Test and browser artifacts
+test-results/
+playwright-report/
+opendkg.org/test/screenshots/
+*.log
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.idea/
+.vscode/
+*.swp

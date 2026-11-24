@@ -1,0 +1,105 @@
+/* Fine satin edges and restrained interaction feedback, shared by both pages. */
+.site-header {
+  background: linear-gradient(115deg, #1b1e22f5, #111315f5 46%, #17191df5);
+  border-bottom-color: transparent;
+  box-shadow: 0 8px 30px #00000018;
+}
+.site-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  background: linear-gradient(90deg, #626b7710, #8b95a24d 18%, #d9dfe899 49%, #87919f4d 82%, #626b7710);
+  box-shadow: 0 1px 0 #0008;
+  pointer-events: none;
+}
+.logo-link img { filter: brightness(1); }
+.logo-link:focus-visible img { filter: brightness(1.25) drop-shadow(0 0 9px #d8e0eb24); }
+.desktop-nav a { position: relative; }
+.desktop-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -9px;
+  height: 1px;
+  background: linear-gradient(90deg, #85909f40, #e1e6ef, #85909f40);
+  transform: scaleX(0);
+  transform-origin: center;
+  opacity: 0;
+  pointer-events: none;
+}
+.desktop-nav a[aria-current="page"] { text-decoration: none; }
+.desktop-nav a[aria-current="page"]::after,
+.desktop-nav a:focus-visible::after { transform: scaleX(1); opacity: 1; }
+.home-page .section, .lab-section { position: relative; }
+.home-page .section::before, .lab-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(calc(100% - 80px), 1200px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #69748360 14%, #a3aebd99 37%, #e2e7efc7 50%, #a3aebd99 63%, #69748360 86%, transparent);
+  box-shadow: 0 1px 0 #0008, 0 -1px 0 #dce4ee08;
+  opacity: .72;
+  pointer-events: none;
+}
+.lab-section + .lab-section { border-top-color: transparent; }
+.lab-docs { border-top-color: transparent; }
+.home-page .section-label::after {
+  background: linear-gradient(90deg, #d0d8e4b3, #7e8a9b66 42%, transparent);
+}
+.lab-nav {
+  border-image: linear-gradient(90deg, #707b8930, #a4afbd80, #707b8930) 1;
+  background: linear-gradient(110deg, #1c2025, #16191d 65%);
+}
+.mobile-nav { border-top-color: #8995a047; }
+.mobile-nav a:focus-visible { color: #fff; }
+.desktop-nav a.nav-pentesting, .mobile-nav a.nav-pentesting {
+  color: #c9def8;
+  font-weight: 650;
+  border: 1px solid #94b7df66;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #9dbbe41a, #8aabe906);
+  box-shadow: inset 0 1px 0 #d5e7ff0c;
+}
+.desktop-nav a.nav-pentesting { padding: 7px 11px; }
+.desktop-nav a.nav-pentesting::after { left: 11px; right: 11px; bottom: 4px; }
+.mobile-nav a.nav-pentesting { display: inline-flex; margin-top: 10px; padding: 10px 14px; }
+.desktop-nav a.nav-pentesting[aria-current="page"],
+.mobile-nav a.nav-pentesting[aria-current="page"] { border-color: #b1ccecaa; background-color: #9dbbe410; }
+
+@media (hover: hover) {
+  .logo-link:hover img { filter: brightness(1.25) drop-shadow(0 0 9px #d8e0eb24); }
+  .desktop-nav a:hover::after { transform: scaleX(1); opacity: 1; }
+  .home-page .section:hover::before, .lab-section:hover::before { opacity: 1; }
+  .nav-cta:hover {
+    background: linear-gradient(145deg, #353d47, #242a32);
+    border-color: #a4afbd;
+    box-shadow: inset 0 1px 0 #eef3fb17, 0 5px 18px #0003;
+  }
+  .lab-doc:hover { box-shadow: inset 0 1px 0 #eef3fb0c, 0 10px 24px #0003; }
+  .mobile-nav a:hover { color: #fff; }
+  .desktop-nav a.nav-pentesting:hover, .mobile-nav a.nav-pentesting:hover {
+    color: #ecf5ff;
+    border-color: #bdd8f5;
+    background-color: #9dbbe418;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .logo-link img { transition: filter 240ms ease; }
+  .desktop-nav a::after { transition: transform 220ms ease, opacity 180ms ease; }
+  .home-page .section::before, .lab-section::before { transition: opacity 350ms ease; }
+  .nav-cta, .lab-doc { transition: background 220ms ease, border-color 220ms ease, box-shadow 220ms ease; }
+  .nav-cta .link-arrow, .text-link .link-arrow { transition: transform 220ms ease; }
+  @media (hover: hover) {
+    .nav-cta:hover .link-arrow, .text-link:hover .link-arrow { transform: translate(2px, -2px); }
+  }
+}
+@media (max-width: 640px) {
+  .home-page .section::before, .lab-section::before { width: calc(100% - 40px); }
+}

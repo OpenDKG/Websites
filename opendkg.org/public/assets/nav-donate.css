@@ -1,0 +1,12 @@
+.nav a.nav-donate {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 44px;
+  color: var(--white);
+}
+
+.nav a.nav-donate:hover {
+  text-decoration: underline;
+  text-underline-offset: .25em;
+}

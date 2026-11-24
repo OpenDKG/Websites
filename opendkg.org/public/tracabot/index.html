@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TRACaBot — Telegram scam moderation helper | OpenDKG</title>
+  <meta name="description" content="TRACaBot is an independent, MIT-licensed Telegram moderation helper that observes joins, records evidence privately, and shares confirmed scam signals.">
+  <link rel="canonical" href="https://opendkg.org/tracabot/">
+  <meta name="theme-color" content="#e8ebe4">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="OpenDKG">
+  <meta property="og:title" content="TRACaBot — Telegram scam moderation helper">
+  <meta property="og:description" content="An independent Telegram anti-scam assistant. Silent by default; removal is opt-in and evidence-gated.">
+  <meta property="og:url" content="https://opendkg.org/tracabot/">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/assets/privacy-notice.css">
+  <script src="/assets/privacy-notice.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/" aria-label="OpenDKG home">
+        <img src="/assets/opendkg-icon.svg" alt="" width="32" height="32">
+        <span>OpenDKG</span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="/axiom/">Axiom</a>
+        <a href="/blackbox/">Blackbox</a>
+        <a href="/DKGSwarm/">DKGSwarm</a>
+        <a href="/tracabot/" aria-current="page">TRACaBot</a>
+        <a href="/transparency/">Transparency</a>
+        <a class="nav-github" href="https://github.com/OpenDKG" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="eyebrow">Independent project · MIT</p>
+        <h1>TRACaBot: a moderator’s helper for Telegram scam patterns.</h1>
+        <p class="lede">An anti-scam bot that watches joins, records evidence privately, and can share confirmed scam signals across communities.</p>
+        <p class="product-meta"><span class="status">Independent · MIT</span> Telegram · OpenClaw · DKG shared memory</p>
+        <div class="actions">
+          <a class="button" href="https://github.com/brxtrac/tracabot" rel="noopener">Read the public history <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="silent-title">
+      <div class="wrap split">
+        <div>
+          <p class="eyebrow">Default behavior</p>
+          <h2 id="silent-title">It observes quietly.</h2>
+          <p>On a join, TRACaBot can run a background lookup against a privacy-preserving identity token. The default outcome is silent observe and log: the bot records the check privately and posts nothing to the group.</p>
+          <p>Manual commands such as start, scan, and report are optional. The bot does not need a language model or an API key for the default join check.</p>
+        </div>
+        <dl class="label">
+          <div><dt>Sees</dt><dd>Telegram joins and configured community activity.</dd></div>
+          <div><dt>Can do</dt><dd>Observe, log, flag, and share confirmed scam signals.</dd></div>
+          <div><dt>Sends</dt><dd>Evidence-backed signals to shared memory, subject to its documented privacy rules.</dd></div>
+          <div><dt>Does not</dt><dd>Guarantee scam detection, ban on suspicion alone, or replace human moderation.</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section section--soft" aria-labelledby="removal-title">
+      <div class="wrap split">
+        <div>
+          <p class="eyebrow">Enforcement</p>
+          <h2 id="removal-title">Removal is opt-in and evidence-gated.</h2>
+          <p>Automatic removal is a separate setting. Even when it is enabled, removal requires an exact stable-identity match, not a display name or similarity match.</p>
+          <p>It also requires confirmed evidence or an explicit admin review, a fresh record with no newer correction, the configured number of independent confirmed roots, bot permissions, and a target who is not an admin, owner, or bot.</p>
+          <p>Shared and verified-graph records are flag-only in the installed adapter today. They can prompt a review; they cannot authorize a removal by themselves.</p>
+        </div>
+        <div class="callout">
+          <h3>Unknown is not safe or guilty</h3>
+          <p>Graph outages, missing provenance, stale evidence, retractions, and ambiguous lineage fail closed to a private local record. That is a safety boundary, not a verdict.</p>
+          <p>Model confidence and behavior flags are evidence signals. They are not proof.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="cannot-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Limits</p>
+          <div>
+            <h2 id="cannot-title">What it cannot prove.</h2>
+            <p class="lede">A community moderation tool should be clear about the difference between a signal and a decision.</p>
+          </div>
+        </div>
+        <div class="verify-grid">
+          <div>
+            <h3>It cannot guarantee detection</h3>
+            <p>Scam patterns change. A clean check does not prove a person is trustworthy, and a flag is not a conviction.</p>
+          </div>
+          <div>
+            <h3>It cannot replace moderators</h3>
+            <p>Humans still own the policy, the appeals, and the decision to remove someone. The bot is a helper, not an authority.</p>
+          </div>
+          <div>
+            <h3>It cannot verify every publisher</h3>
+            <p>The installed adapter does not expose authenticated publisher-approval provenance for every shared record. That is why shared records are flag-only.</p>
+          </div>
+          <div>
+            <h3>It cannot see every platform</h3>
+            <p>TRACaBot is a Telegram tool. Its evidence and enforcement rules do not automatically transfer to other platforms.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft" aria-labelledby="tracabot-next-title">
+      <div class="wrap">
+        <div class="cta-band">
+          <h2 id="tracabot-next-title">Read the public history.</h2>
+          <p>The public repository retains the project’s original history and license. Current development is separate; this page does not link to private work.</p>
+          <div class="actions">
+            <a class="button button--light" href="https://github.com/brxtrac/tracabot" rel="noopener">Open the public repository <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <p class="footer-brand">OpenDKG</p>
+        <p>Independent open-source software for privacy, security, and interoperable infrastructure. A third-party integration does not imply affiliation or endorsement.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="/axiom/">Axiom</a>
+        <a href="/blackbox/">Blackbox</a>
+        <a href="/DKGSwarm/">DKGSwarm</a>
+        <a href="/tracabot/">TRACaBot</a>
+        <a href="/transparency/">Transparency</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="https://github.com/OpenDKG" rel="noopener">GitHub</a>
+      </nav>
+      <p class="fine">No cookies or analytics. © 2026 OpenDKG.</p>
+    </div>
+  </footer>
+
+  <aside id="privacy-notice" class="privacy-notice" role="region" aria-label="Privacy notice">
+    <div class="privacy-notice-inner">
+      <p class="privacy-notice-copy">
+        <span class="privacy-notice-dot" aria-hidden="true"></span>
+        <span><strong>No cookies or tracking.</strong> OpenDKG uses zero cookies or analytics, and Axiom collects no telemetry. Static hosting runs on Cloudflare Pages; optional features connect externally only when enabled.</span>
+      </p>
+      <div class="privacy-notice-actions">
+        <a class="privacy-notice-link" href="/privacy/">Privacy Policy</a>
+        <button type="button" class="privacy-notice-btn" id="privacy-notice-dismiss">Got it</button>
+      </div>
+    </div>
+  </aside>
+</body>
+</html>

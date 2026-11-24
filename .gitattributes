@@ -1,0 +1,4 @@
+# Keep public download bytes identical across platforms and inside the ZIP bundle.
+axiom/assets/pentesting/downloads/*.md text eol=lf
+axiom/assets/pentesting/downloads/*.csv text eol=lf
+axiom/assets/pentesting/downloads/*.json text eol=lf

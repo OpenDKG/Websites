@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Donate crypto | OpenDKG</title>
+  <meta name="description" content="Support Axiom and OpenDKG with an ETH donation on Ethereum mainnet.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Donate crypto | OpenDKG">
+  <meta property="og:description" content="Support Axiom and OpenDKG with ETH on Ethereum mainnet.">
+  <meta property="og:url" content="https://opendkg.org/donate/">
+  <link rel="canonical" href="https://opendkg.org/donate/">
+  <link rel="icon" href="/assets/opendkg-logo.png" type="image/png">
+  <link rel="stylesheet" href="/home.css">
+  <link rel="stylesheet" href="/donate/donate.css">
+  <link rel="stylesheet" href="/assets/privacy-notice.css">
+  <script src="/donate/donate.js" defer></script>
+  <script src="/assets/privacy-notice.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="shell nav-bar">
+      <a class="brand" href="/" aria-label="OpenDKG home">
+        <img class="brand-logo" src="/assets/opendkg-logo.png" alt="" width="89" height="60">
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/axiom/">Axiom</a>
+        <a class="nav-github" href="https://github.com/OpenDKG" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+  <main class="shell donate-page" id="main">
+    <h1>Donate crypto</h1>
+    <p class="donate-intro">Support Axiom and OpenDKG with ETH.</p>
+    <section class="donate-card" aria-labelledby="eth-title">
+      <div class="donate-method">
+        <img class="donate-mark" src="/assets/ethereum.png" alt="" width="48" height="48">
+        <div>
+          <h2 id="eth-title">Ethereum <span>ETH</span></h2>
+          <p>Ethereum mainnet</p>
+        </div>
+      </div>
+      <label for="eth-address">Recipient address</label>
+      <div class="donate-address">
+        <textarea id="eth-address" rows="2" readonly spellcheck="false" aria-describedby="eth-network">0xFac745f39D832BC6A7B6D7F306928aBDC2C6a8ED</textarea>
+        <button type="button" class="button" id="copy-address" hidden>Copy address</button>
+      </div>
+      <p class="donate-note" id="eth-network">Send only ETH on Ethereum mainnet to this address.</p>
+      <p class="donate-status" id="copy-status" role="status"></p>
+    </section>
+  </main>
+
+  <aside id="privacy-notice" class="privacy-notice" role="region" aria-label="Privacy notice">
+    <div class="privacy-notice-inner">
+      <p class="privacy-notice-copy">
+        <span class="privacy-notice-dot" aria-hidden="true"></span>
+        <span><strong>No cookies or tracking.</strong> OpenDKG uses zero cookies or analytics, and Axiom collects no telemetry. Static hosting runs on Cloudflare Pages; optional features connect externally only when enabled.</span>
+      </p>
+      <div class="privacy-notice-actions">
+        <a class="privacy-notice-link" href="/privacy/">Privacy Policy</a>
+        <button type="button" class="privacy-notice-btn" id="privacy-notice-dismiss">Got it</button>
+      </div>
+    </div>
+  </aside>
+</body>
+</html>

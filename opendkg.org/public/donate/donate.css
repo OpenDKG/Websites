@@ -1,0 +1,71 @@
+.donate-page {
+  max-width: 740px;
+  padding-block: clamp(48px, 9vw, 112px);
+}
+
+.donate-page h1 { font-size: clamp(38px, 7vw, 64px); }
+.donate-intro { margin-top: 12px; color: var(--soft); }
+
+.donate-card {
+  margin-top: 34px;
+  padding: clamp(18px, 5vw, 32px);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--cut);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.donate-method {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.donate-mark {
+  flex: none;
+  padding: 7px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--cut);
+  background: var(--paper);
+  object-fit: contain;
+}
+
+.donate-method h2 { font-size: 22px; }
+.donate-method span {
+  margin-left: 5px;
+  color: var(--titanium);
+  font-size: 13px;
+  letter-spacing: 0;
+  vertical-align: middle;
+}
+.donate-method p, .donate-note { color: var(--soft); font-size: 13px; }
+.donate-card label { display: block; margin-bottom: 7px; font-size: 13px; }
+.donate-address { display: flex; align-items: stretch; gap: 12px; }
+.donate-address textarea {
+  flex: 1;
+  min-width: 0;
+  min-height: 48px;
+  padding: 11px 12px;
+  resize: none;
+  border: 1px solid var(--border-strong);
+  border-radius: 4px;
+  background: var(--paper);
+  color: var(--white);
+  font: 13px/1.45 ui-monospace, Consolas, monospace;
+  overflow-wrap: anywhere;
+}
+.donate-address .button {
+  align-self: flex-start;
+  border-radius: 4px;
+  clip-path: none;
+  cursor: pointer;
+}
+.donate-address [hidden] { display: none; }
+.donate-note, .donate-status { margin-top: 10px; }
+.donate-status { min-height: 1.5em; font-size: 13px; }
+.donate-status:empty { margin-top: 0; min-height: 0; }
+
+@media (max-width: 620px) {
+  .donate-address { flex-direction: column; }
+}

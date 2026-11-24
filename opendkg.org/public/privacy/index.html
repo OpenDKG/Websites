@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy | OpenDKG &amp; Axiom</title>
+  <meta name="description" content="How OpenDKG websites and the Axiom Desktop application handle data, local storage, optional network features, and regional privacy rights (EU GDPR, Switzerland revFADP, and the United States).">
+  <link rel="canonical" href="https://opendkg.org/privacy/">
+  <meta name="theme-color" content="#e8ebe4">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="OpenDKG">
+  <meta property="og:title" content="Privacy Policy | OpenDKG &amp; Axiom">
+  <meta property="og:description" content="Local-first software, zero analytics or cookies, optional integrations, and GDPR / revFADP / US privacy disclosures.">
+  <meta property="og:url" content="https://opendkg.org/privacy/">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/" aria-label="OpenDKG home">
+        <img src="/assets/opendkg-icon.svg" alt="" width="32" height="32">
+        <span>OpenDKG</span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="/axiom/">Axiom</a>
+        <a href="/blackbox/">Blackbox</a>
+        <a href="/DKGSwarm/">DKGSwarm</a>
+        <a href="/tracabot/">TRACaBot</a>
+        <a href="/transparency/">Transparency</a>
+        <a class="nav-github" href="https://github.com/OpenDKG" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="eyebrow">Privacy Policy</p>
+        <h1>Local by default. Clear about every connection.</h1>
+        <p class="lede">OpenDKG websites set no cookies or analytics, and Axiom collects no telemetry or user accounts. This notice explains the limited network connections that occur when you visit our pages or turn on optional features.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap prose">
+        <p><strong>Effective date:</strong> 2026-11-22</p>
+
+        <h2>1. Scope and controller</h2>
+        <p>This Privacy Policy applies to the public websites <strong>opendkg.org</strong> and <strong>opendkg.org/axiom/</strong>, as well as the <strong>Axiom</strong> desktop application (Windows, Linux, and macOS), published by the independent OpenDKG open-source initiative (<a href="mailto:contact@opendkg.org">contact@opendkg.org</a>).</p>
+        <p>Independent third-party services or optional integrations—including Umanitek Blackbox, OriginTrail / DKG nodes, Cloudflare, GitHub, YouTube, VirusTotal, and external DNS or AI providers you configure—are operated separately under their own privacy policies and terms.</p>
+
+        <h2>2. Websites (opendkg.org and opendkg.org/axiom/)</h2>
+        <ul>
+          <li><strong>No cookies or analytics:</strong> Our websites do not set tracking cookies, advertising identifiers, or behavioral analytics scripts.</li>
+          <li><strong>Hosting and security logs:</strong> The sites are served as static pages via <strong>Cloudflare Pages</strong>, which processes standard HTTP request metadata (such as IP address, timestamp, requested URL, and user-agent) solely to deliver pages and protect against abuse and DDoS attacks.</li>
+          <li><strong>Embedded video previews:</strong> On <code>/axiom/</code>, embedded videos use click-to-load thumbnails hosted locally. No connection is made to YouTube (<code>youtube-nocookie.com</code>) unless you click Play.</li>
+          <li><strong>External links:</strong> Links to GitHub, DKG Swarm, TRACaBot, and third-party sites leave our pages; those destinations are governed by their own policies.</li>
+        </ul>
+
+        <h2>3. Axiom desktop application</h2>
+        <ul>
+          <li><strong>No telemetry or accounts:</strong> Axiom does not include usage telemetry, analytics, crash-reporting pipelines, ads, or account registration. OpenDKG does not operate a central server that receives your browsing history, firewall rules, prompts, or file contents.</li>
+          <li><strong>Local storage:</strong> Network flow history (<code>axiom.db</code>), agent hook evidence metadata (<code>agent-evidence.jsonl</code>), firewall baselines, and local settings remain on your machine. You can inspect, clear, or uninstall them at any time.</li>
+        </ul>
+
+        <h2>4. Optional and user-controlled network features in Axiom</h2>
+        <p>When core local monitoring runs, Axiom makes no outbound telemetry connections. Network connections occur only for the features below according to your settings and installation choice:</p>
+        <ul>
+          <li><strong>Blackbox &amp; OriginTrail DKG threat sharing (consented / toggleable):</strong> During Complete installation or First-Run setup, or via the toggles on the Agent Protection page and Blackbox Configure dialog, you may choose whether to enable Blackbox automatic community threat sharing or submit manual verified IOC reports. Shared reports contain sanitized/redacted threat sightings and indicators only; local custom rules, secrets, and private prompts are excluded by design. Public CC0 DKG replicas may retain published sightings even after retraction. Turning automatic sharing off keeps all local agent blocking functional without publishing sightings.</li>
+          <li><strong>Update checks:</strong> When enabled (on by default; can be turned off under <em>Settings → Updates</em>), Axiom queries GitHub Releases (<code>api.github.com/repos/OpenDKG/Axiom/releases/latest</code>) at startup, every 6 hours, or when you click <em>Check for updates now</em>. No installation ID, hardware identifier, or credentials are sent; GitHub receives standard HTTP request metadata and the product version User-Agent header.</li>
+          <li><strong>Privacy Shield DNS (opt-in / Complete install):</strong> When enabled, non-blocked DNS queries are forwarded to the upstream resolver you select (such as Cloudflare DNS-over-HTTPS at <code>1.1.1.1</code> or a custom resolver), and configured public blocklists are downloaded when refreshed.</li>
+          <li><strong>Opt-in external integrations (off by default):</strong>
+            <ul>
+              <li><em>VirusTotal (VT Check):</em> Sends only the SHA-256 hash of a selected file when you manually request a lookup, using the API key you provide; files are never uploaded.</li>
+              <li><em>Community feed:</em> Fetches indicators only from the HTTPS feed URL you enable.</li>
+              <li><em>AI Analyst:</em> Uses local Ollama on your machine by default. If you configure an external LLM provider, only the prompt and redacted network snapshot you explicitly submit are sent to that provider.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h2>5. Contact emails</h2>
+        <p>If you email <a href="mailto:contact@opendkg.org">contact@opendkg.org</a>, we process your email address and message contents solely to read and respond to your inquiry, and we do not use it for marketing or share it with third parties unless legally required.</p>
+
+        <h2>6. Regional privacy disclosures (EU, Switzerland, and United States)</h2>
+
+        <h3>European Union &amp; EEA (GDPR)</h3>
+        <ul>
+          <li><strong>Legal bases:</strong> Under Art. 6(1) GDPR, optional threat sharing, opt-in integrations (VirusTotal, external AI providers, community feeds), and click-to-load video playback rely on your <strong>consent</strong> (Art. 6(1)(a)), which you may withdraw at any time in Axiom settings or by not loading optional content. Standard website transport security (Cloudflare Pages) and replying to correspondence rely on <strong>legitimate interests</strong> (Art. 6(1)(f)).</li>
+          <li><strong>Your rights:</strong> Where OpenDKG holds personal data (for example, emails sent to <code>contact@opendkg.org</code>), you have the right to request access, rectification, erasure, restriction, data portability, or object to processing, as well as the right to lodge a complaint with your local EU/EEA data protection supervisory authority. Local data stored on your own device can be viewed, exported, or deleted directly by you.</li>
+        </ul>
+
+        <h3>Switzerland (revFADP / nDSG)</h3>
+        <ul>
+          <li><strong>Transparency and cross-border transfers:</strong> In accordance with Art. 19 of the Swiss Federal Act on Data Protection (revFADP), please note that Cloudflare (website delivery), GitHub (release checks), YouTube (if you click Play on embedded videos), and optional third-party integrations or decentralized OriginTrail DKG peers operate infrastructure outside Switzerland (including the EU and United States).</li>
+          <li><strong>Your rights:</strong> You may request information about or deletion of any correspondence held by OpenDKG and have the right to contact the Swiss Federal Data Protection and Information Commissioner (FDPIC / EDÖB).</li>
+        </ul>
+
+        <h3>United States (CCPA/CPRA &amp; Federal Transparency)</h3>
+        <ul>
+          <li>We do <strong>not</strong> sell personal information and do <strong>not</strong> share personal information for cross-context behavioral advertising, nor do we collect sensitive personal information or track users across third-party apps or websites.</li>
+          <li>California and other US state residents may contact <a href="mailto:contact@opendkg.org">contact@opendkg.org</a> to request access to or deletion of any email correspondence held by OpenDKG.</li>
+        </ul>
+
+        <h2>7. Children</h2>
+        <p>Our websites and software are general-audience technical tools and are not directed to children under 13 (or under the applicable age of digital consent in the EU/EEA or Switzerland). We do not knowingly collect personal data from children.</p>
+
+        <h2>8. Changes and contact</h2>
+        <p>We may update this Privacy Policy as features evolve and will update the effective date above. For privacy questions or requests, email <a href="mailto:contact@opendkg.org">contact@opendkg.org</a>. For technical issues, please open a public issue at <a href="https://github.com/OpenDKG/Axiom/issues" rel="noopener">GitHub</a> without including personal data, credentials, or private paths.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <p class="footer-brand">OpenDKG</p>
+        <p>Independent open-source software for privacy, security, and interoperable infrastructure. A third-party integration does not imply affiliation or endorsement.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="/axiom/">Axiom</a>
+        <a href="/blackbox/">Blackbox</a>
+        <a href="/DKGSwarm/">DKGSwarm</a>
+        <a href="/tracabot/">TRACaBot</a>
+        <a href="/transparency/">Transparency</a>
+        <a href="/privacy/" aria-current="page">Privacy</a>
+        <a href="https://github.com/OpenDKG" rel="noopener">GitHub</a>
+      </nav>
+      <p class="fine">No cookies or analytics. © 2026 OpenDKG.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,18 @@
+# Response headers for Cloudflare Pages. See README.md, "Deployment".
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+
+# The Axiom site is a vendored project site with its own scripts, fonts and video player.
+/axiom/*
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; frame-src https://www.youtube-nocookie.com; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+
+/axiom/assets/fonts/*
+  Content-Type: font/ttf
+
+/donate/*
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
