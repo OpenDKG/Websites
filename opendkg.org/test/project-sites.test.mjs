@@ -99,3 +99,16 @@ test("Cloudflare _headers includes CSP and font headers for /desktop/*, /graph/*
     assert.ok(headers.includes(`/${slug}/assets/fonts/*`), `_headers missing /${slug}/assets/fonts/*`);
   }
 });
+
+test("homepage and /apps/ directory list all project sites", () => {
+  const homeHtml = readFileSync(path.join(distDir, "index.html"), "utf8");
+  const appsHtml = readFileSync(path.join(distDir, "apps", "index.html"), "utf8");
+  const appsCss = readFileSync(path.join(distDir, "apps", "apps.css"), "utf8");
+
+  assert.ok(appsCss.length > 0, "apps.css should be non-empty");
+  assert.ok(homeHtml.includes('href="/apps/"'), "homepage missing /apps/ link");
+  for (const route of ["/axiom/", "/desktop/", "/graph/", "/veritytrail/"]) {
+    assert.ok(homeHtml.includes(`href="${route}"`), `homepage missing ${route}`);
+    assert.ok(appsHtml.includes(`href="${route}"`), `/apps/ missing ${route}`);
+  }
+});
