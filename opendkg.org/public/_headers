@@ -13,6 +13,28 @@
 /axiom/assets/fonts/*
   Content-Type: font/ttf
 
+# Standalone project sites using Axiom's self-hosted scripts, inline styles, and fonts.
+/desktop/*
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+
+/desktop/assets/fonts/*
+  Content-Type: font/ttf
+
+/graph/*
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+
+/graph/assets/fonts/*
+  Content-Type: font/ttf
+
+/veritytrail/*
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+
+/veritytrail/assets/fonts/*
+  Content-Type: font/ttf
+
 /donate/*
   ! Content-Security-Policy
   Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'

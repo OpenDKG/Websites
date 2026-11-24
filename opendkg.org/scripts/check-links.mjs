@@ -35,7 +35,7 @@ export function collectIds(html) {
 }
 
 // Vendored project sites keep their own conventions and their own checks.
-const vendored = new Set(["axiom"]);
+const vendored = new Set(["axiom", "desktop", "graph", "veritytrail"]);
 
 async function walkHtml(dir, root = dir) {
   const out = [];

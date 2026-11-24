@@ -1,0 +1,465 @@
+<!doctype html>
+<!-- Source: OpenDKG / DKG Graph Local. Served at https://opendkg.org/graph/ via the opendkg.org Pages build. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0f18">
+  <meta name="description" content="DKG Graph Local is a local-first neuro-symbolic knowledge vault powered by OriginTrail DKG v10.1.2 Working Memory, a deterministic WASM Graph Computer, and loopback MCP on 127.0.0.1.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="DKG Graph Local — Neuro-Symbolic Knowledge Vault">
+  <meta property="og:description" content="Zero gas by default. Private Working Memory, deterministic WASM verification, and verifiable proofs for 12 AI clients on 127.0.0.1.">
+  <meta property="og:image" content="https://opendkg.org/graph/assets/hero-banner.png">
+  <link rel="canonical" href="https://opendkg.org/graph/">
+  <meta property="og:url" content="https://opendkg.org/graph/">
+  <title>DKG Graph Local — Neuro-Symbolic Knowledge Vault</title>
+  <link rel="icon" type="image/png" href="assets/icon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/icon-128.png">
+  <link rel="preload" href="assets/fonts/Manrope-var.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="assets/site.css">
+  <link rel="stylesheet" href="assets/titanium.css">
+  <link rel="stylesheet" href="assets/refinements.css">
+  <link rel="stylesheet" href="assets/silver-home.css">
+  <link rel="stylesheet" href="assets/silver-effects.css">
+  <link rel="stylesheet" href="assets/nav-donate.css">
+  <link rel="stylesheet" href="assets/privacy-notice.css">
+  <link rel="stylesheet" href="assets/theme.css">
+  <script src="assets/site.js" defer></script>
+  <script src="assets/privacy-notice.js" defer></script>
+</head>
+<body class="home-page" id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="site-frame">
+    <header class="site-header">
+      <div class="shell nav-bar">
+        <a class="logo-link" href="#top" aria-label="DKG Graph Local — back to top">
+          <span class="brand-lockup">
+            <img src="assets/app-icon.png" width="256" height="256" alt="">
+            <span>DKG Graph Local</span>
+          </span>
+        </a>
+        <nav class="desktop-nav" aria-label="Main navigation">
+          <a href="#vault">Knowledge Vault</a>
+          <a href="#how-it-works">How it works</a>
+          <a href="#architecture">Architecture</a>
+          <a href="#platforms">Platforms</a>
+          <a href="#community">Open source</a>
+          <a class="nav-donate" href="https://opendkg.org/donate/"><img src="assets/icons/ethereum.png" alt="" width="9" height="15">Donate</a>
+          <a class="nav-opendkg" href="https://opendkg.org/">OpenDKG</a>
+        </nav>
+        <a class="nav-cta" href="#download">Get Graph Local <svg class="link-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12 12 4M6 4h6v6"/></svg></a>
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
+      </div>
+      <nav class="mobile-nav" id="mobile-menu" aria-label="Mobile navigation" hidden>
+        <a href="#vault">Knowledge Vault</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#platforms">Platforms</a>
+        <a href="#community">Open source</a>
+        <a href="#download">Get Graph Local</a>
+        <a class="nav-donate" href="https://opendkg.org/donate/"><img src="assets/icons/ethereum.png" alt="" width="9" height="15">Donate</a>
+        <a class="nav-opendkg" href="https://opendkg.org/">OpenDKG</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero shell" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-marker"></span> NEURO-SYMBOLIC KNOWLEDGE VAULT</div>
+          <h1 id="hero-title">Verifiable local memory.<br><em>Zero gas by default.</em></h1>
+          <p class="hero-intro">Index local documents, author structured claims, and verify facts deterministically inside a private OriginTrail DKG v10.1.2 Working Memory and WASM Graph Computer on 127.0.0.1 — with zero wallets or cloud accounts required.</p>
+          <div class="hero-actions">
+            <a href="#vault" class="button button-primary">Explore the Vault <svg class="link-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12 12 4M6 4h6v6"/></svg></a>
+            <a href="#architecture" class="text-link">See proof architecture <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="platform-line"><span class="platform-dash"></span> <strong>Windows x64 available</strong><span class="dot">·</span>macOS &amp; Linux planned</div>
+        </div>
+        <div class="hero-visual" aria-label="DKG Graph Local Dark Glass desktop interface">
+          <img class="hero-shield" src="assets/app-icon.png" width="256" height="256" alt="" aria-hidden="true">
+          <div class="dashboard-frame">
+            <img src="assets/app-screenshot.png" width="1920" height="1042" alt="DKG Graph Local desktop window in Dark Glass mode showing Working Memory sub-graphs, Knowledge Vault status, and loopback MCP server telemetry" loading="eager" fetchpriority="high">
+          </div>
+          <div class="visual-caption"><span class="caption-pulse"></span> Real Tauri 2 + React 19 UI <span class="caption-divider"></span> 100% private on 127.0.0.1</div>
+        </div>
+      </section>
+
+      <div class="trust-strip" aria-label="Core architecture principles">
+        <div class="shell strip-inner">
+          <span>ZERO GAS BY DEFAULT</span>
+          <span>ORIGINTRAIL DKG V10.1.2 WM</span>
+          <span>WASM GRAPH COMPUTER</span>
+          <span>12 AI CLIENTS VIA MCP</span>
+        </div>
+      </div>
+
+      <section class="section shell banner-showcase" id="gate" aria-labelledby="gate-title">
+        <div class="section-label">THE NEURO-SYMBOLIC GATE</div>
+        <div class="section-head">
+          <h2 id="gate-title">AI proposes.<br><span>WASM proves.</span></h2>
+          <p>AI assistants can draft claims, but they cannot certify citations or detect conflicts on their own. DKG Graph Local puts every draft through a deterministic WASM verification gate before anything enters sealed findings.</p>
+        </div>
+        <div class="banner-frame">
+          <img src="assets/hero-banner.png" width="1600" height="480" alt="Neuro-symbolic verification gate diagram: unverified drafts enter the isolated WASM sandbox and only verified claims are sealed into graph findings" loading="lazy">
+        </div>
+        <div class="banner-summary">
+          <div class="banner-pill">
+            <span class="banner-pill-tag">01 · INPUTS SUB-GRAPH</span>
+            <strong>Unverified Drafts</strong>
+            <p>Ingested files, Review Inbox candidates, and AI-proposed claims land in <code>inputs</code> as unverified drafts — never mixed with trusted facts.</p>
+          </div>
+          <div class="banner-pill">
+            <span class="banner-pill-tag">02 · WORKER SANDBOX</span>
+            <strong>Deterministic WASM Checks</strong>
+            <p>TypeScript-to-WASM programs run in isolated <code>node:worker_threads</code> to validate citations, detect contradictions, and block leaked secrets.</p>
+          </div>
+          <div class="banner-pill">
+            <span class="banner-pill-tag is-mint">03 · FINDINGS &amp; AUDIT</span>
+            <strong>Sealed Graph Nodes</strong>
+            <p>Passing claims are sealed into <code>findings</code> with Merkle roots, EIP-712 digests, and tamper-evident execution receipts in <code>audit</code>.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section shell section-protection" id="model" aria-labelledby="model-title">
+        <div class="section-label">TWO-STAGE VERIFICATION</div>
+        <div class="section-head">
+          <h2 id="model-title">Unverified drafts stay isolated.<br><span>Only verified facts seal.</span></h2>
+          <p>Whether authored in Simple Mode, generated by an optional local model, or sent from external tools, claims cannot promote themselves into verified memory.</p>
+        </div>
+        <div class="threat-pair">
+          <article class="threat-panel">
+            <div class="panel-heading">
+              <span class="line-icon line-icon-agent" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20v2"/><path d="M12 2v2"/><path d="M17 20v2"/><path d="M17 2v2"/><path d="M2 12h2"/><path d="M2 17h2"/><path d="M2 7h2"/><path d="M20 12h2"/><path d="M20 17h2"/><path d="M20 7h2"/><path d="M7 20v2"/><path d="M7 2v2"/><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="8" y="8" width="8" height="8" rx="1"/></svg>
+              </span>
+              <span class="panel-index">AI PROPOSE → UNVERIFIED DRAFT</span>
+            </div>
+            <h3>Stage plain-English proposals safely in <code>inputs</code>.</h3>
+            <p>Use the built-in deterministic offline proposer or connect a local OpenAI-compatible LLM such as Ollama. Every proposal enters the <code>inputs</code> named sub-graph marked unverified, alongside Review Inbox candidate diffs.</p>
+            <div class="panel-foot">Offline proposer or local Ollama <svg class="link-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12 12 4M6 4h6v6"/></svg></div>
+          </article>
+          <article class="threat-panel">
+            <div class="panel-heading">
+              <span class="line-icon line-icon-system" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+              </span>
+              <span class="panel-index">WASM SANDBOX → SEALED FINDINGS</span>
+            </div>
+            <h3>Promote only what passes deterministic rules.</h3>
+            <p>Built-in verifiers (<code>claim-validator</code>, <code>conflict-detector</code>) and custom Rule Chains inspect citations, timestamps, cross-graph conflicts, and secrets. Unsourced claims are blocked with explicit violation reasons.</p>
+            <div class="panel-foot">Merkle roots &amp; execution receipts <svg class="link-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12 12 4M6 4h6v6"/></svg></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-os" id="vault" aria-labelledby="vault-title">
+        <div class="shell os-layout">
+          <div class="os-copy">
+            <div class="section-label">KNOWLEDGE VAULT &amp; GRAPH ENGINE</div>
+            <h2 id="vault-title">Structured memory.<br><span>Cryptographic auditability.</span></h2>
+            <p>Built for both everyday users in Simple Mode and power users in the Advanced workbench, combining hybrid full-text/vector search with RDF sub-graphs and deterministic WASM execution.</p>
+            <ul class="feature-list">
+              <li>
+                <span class="mini-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg>
+                </span>
+                <div>
+                  <strong>Hybrid SQLite / sqlite-vec / FTS5 + Oxigraph RDF</strong>
+                  <span>Index .md, .txt, .pdf, and .docx files with Reciprocal Rank Fusion alongside isolated <code>inputs</code>, <code>rules</code>, <code>findings</code>, and <code>audit</code> sub-graphs.</span>
+                </div>
+              </li>
+              <li>
+                <span class="mini-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+                </span>
+                <div>
+                  <strong>9 Built-in Domain WASM Templates &amp; Rule Chains</strong>
+                  <span>Deploy 1-click verifiers for Medical, Security, Logistics, Legal SLA, ESG, Finance, EU DPP, AI Provenance, or custom SPARQL — chained up to 10 steps with fail-fast halting.</span>
+                </div>
+              </li>
+              <li>
+                <span class="mini-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15.686 15A14.5 14.5 0 0 1 12 22a14.5 14.5 0 0 1 0-20 10 10 0 1 0 9.542 13"/><path d="M2 12h8.5"/><path d="M20 6V4a2 2 0 1 0-4 0v2"/><rect width="8" height="5" x="14" y="6" rx="1"/></svg>
+                </span>
+                <div>
+                  <strong>Privacy Split Certificates &amp; Blackbox Flight Recorder</strong>
+                  <span>Every run splits shareable <code>publicProof</code> certificates from private local evidence, while MCP, WASM, and wallet events log to an RFC 8785 JCS + SHA-256 chain.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="os-art">
+            <div class="os-surface">
+              <div class="os-surface-top">
+                <span class="os-label">WORKING MEMORY / SUB-GRAPHS</span>
+                <span class="os-dots">● ● ●</span>
+              </div>
+              <div class="os-insight">
+                <img class="os-insight-mark" src="assets/app-icon.png" width="256" height="256" alt="" loading="lazy">
+                <div>
+                  <span class="metric-caption">OXIGRAPH + WASM GRAPH COMPUTER</span>
+                  <div class="os-insight-title">Isolated quads. Verifiable receipts.</div>
+                </div>
+              </div>
+              <div class="os-bars" aria-hidden="true">
+                <span style="--v:38%"></span><span style="--v:58%"></span><span style="--v:46%"></span><span style="--v:74%"></span><span style="--v:62%"></span><span style="--v:82%"></span><span style="--v:68%"></span><span style="--v:94%"></span><span style="--v:76%"></span><span style="--v:85%"></span><span style="--v:70%"></span>
+              </div>
+              <div class="os-stats">
+                <div><span>SUB-GRAPHS</span><strong>4 Isolated</strong></div>
+                <div><span>WASM GATE</span><strong>Deterministic</strong></div>
+                <div><span>LOOPBACK</span><strong>127.0.0.1</strong></div>
+              </div>
+            </div>
+            <p class="art-caption">Illustrative telemetry — live quad counts and receipts are tracked per sub-graph in DKG Graph Local.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section shell method" id="how-it-works" aria-labelledby="method-title">
+        <div class="section-label">FROM DOCUMENT TO PROOF</div>
+        <div class="section-head">
+          <h2 id="method-title">Ingest. Verify.<br><span>Inspect &amp; connect.</span></h2>
+          <p>Start in 3-step Simple Mode with a 1-click Sample Pack, or open the full Advanced workbench for SPARQL 1.1 queries, custom WASM studio programs, and Sigma.js graph exploration.</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <span class="step-index">STEP 01</span>
+            <h3>Ingest</h3>
+            <p>Drop .md, .txt, .pdf, or .docx files, browse folders locally, load the Sample Pack, or accept Review Inbox candidates.</p>
+          </div>
+          <div class="step">
+            <span class="step-index">STEP 02</span>
+            <h3>Verify</h3>
+            <p>Execute built-in or custom TypeScript-to-WASM verifiers and multi-step Rule Chains inside an isolated worker sandbox.</p>
+          </div>
+          <div class="step">
+            <span class="step-index">STEP 03</span>
+            <h3>Inspect</h3>
+            <p>Explore entities in the Sigma.js v4 Mind Map, run <code>GRAPH ?g</code> SPARQL 1.1 queries, and verify Blackbox hash chains.</p>
+          </div>
+          <div class="step">
+            <span class="step-index">STEP 04</span>
+            <h3>Connect / Publish</h3>
+            <p>Serve redacted proofs to 12 AI tools over MCP <code>:3847</code>, or opt in to publish via AES-256-GCM wallet and Privacy Review.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-offline" id="offline" aria-labelledby="offline-title">
+        <div class="shell offline-layout">
+          <div class="offline-mark" aria-hidden="true">
+            <img src="assets/app-icon.png" width="256" height="256" alt="" loading="lazy">
+          </div>
+          <div class="offline-copy">
+            <div class="section-label">LOCAL-FIRST CONTINUITY</div>
+            <h2 id="offline-title">100% private on 127.0.0.1.<br><span>No wallet or gas required.</span></h2>
+            <p>Everything runs locally on your machine by default — SQLite, Oxigraph Working Memory, WASM verification, and the deterministic offline proposer (or optional local Ollama) need zero TRAC tokens, zero gas fees, and zero external cloud accounts. If you ever choose to publish a permanent public Knowledge Asset, the separate Wallet &amp; Publish tab protects keys with AES-256-GCM encryption and inspects every triple in a Privacy Review modal before signing.</p>
+            <div class="offline-footnote"><span class="footnote-mark"></span> Public DKG publishing to NeuroWeb, Gnosis, or Base testnets and mainnets is strictly opt-in and never runs automatically.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section shell intelligence" id="architecture" aria-labelledby="architecture-title">
+        <div class="section-label">VERIFIABLE ECOSYSTEM LOOP</div>
+        <div class="section-head">
+          <h2 id="architecture-title">Redacted proofs for AI.<br><span>Raw evidence stays home.</span></h2>
+          <p>Connect 12 AI coding clients in one click over loopback Streamable HTTP while keeping private local evidence locked on 127.0.0.1 — and optionally bridge verified assets to OriginTrail DKG.</p>
+        </div>
+        <figure id="intelligence-map" class="intelligence-map" aria-labelledby="intelligence-map-title" aria-describedby="intelligence-map-note">
+          <div class="intelligence-map-heading">
+            <div>
+              <span class="map-eyebrow">THE PRIVACY SPLIT ARCHITECTURE</span>
+              <h3 id="intelligence-map-title">One local vault. Clean cryptographic boundaries.</h3>
+            </div>
+            <span class="map-optional">Redacted by default</span>
+          </div>
+          <div class="intelligence-map-grid">
+            <div class="map-partners">
+              <article class="map-partner">
+                <span class="map-node-label">WORKING MEMORY &amp; PUBLISHING</span>
+                <img class="map-origintrail" src="assets/brands/origintrail.webp" width="416" height="94" alt="OriginTrail" loading="lazy">
+                <h4>OriginTrail DKG v10.1.2</h4>
+                <p>Local Working Memory sub-graphs and optional NeuroWeb, Gnosis, or Base publishing.</p>
+              </article>
+              <article class="map-partner">
+                <span class="map-node-label">LOOPBACK STREAMABLE HTTP</span>
+                <h4>12 AI Coding Clients (MCP :3847)</h4>
+                <p>One-click connect for Claude Desktop, Claude Code, Cursor, Windsurf, VS Code, Codex, Gemini CLI, Antigravity, Cline, Roo Code, OpenCode &amp; Zed.</p>
+              </article>
+            </div>
+            <div class="map-connector map-connector-in" aria-hidden="true">
+              <svg viewBox="0 0 100 300" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="map-line-in" x1="0" x2="1">
+                    <stop stop-color="#38bdf8"/>
+                    <stop offset="1" stop-color="#93c5fd"/>
+                  </linearGradient>
+                </defs>
+                <path d="M0 68H28Q42 68 42 84V216Q42 232 28 232H0M42 150H100"/>
+                <circle cx="42" cy="150" r="3"/>
+                <path class="map-arrow" d="m91 145 8 5-8 5"/>
+              </svg>
+              <span>Queries &amp; drafts</span>
+            </div>
+            <div class="map-axiom">
+              <span class="map-node-label">ON 127.0.0.1</span>
+              <img src="assets/app-icon.png" width="256" height="256" alt="DKG Graph Local icon" loading="lazy">
+              <strong>DKG GRAPH LOCAL</strong>
+              <span class="map-core-tag">WASM GATE &amp; PRIVACY SPLIT</span>
+              <p>Verify rules locally.<br>Separate proof from raw data.</p>
+              <div class="map-return-label">JCS + SHA-256 Blackbox</div>
+            </div>
+            <div class="map-connector map-connector-out" aria-hidden="true">
+              <svg viewBox="0 0 100 300" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="map-line-out" x1="0" x2="1">
+                    <stop stop-color="#60a5fa"/>
+                    <stop offset="1" stop-color="#34d399"/>
+                  </linearGradient>
+                </defs>
+                <path d="M0 150H58M100 68H72Q58 68 58 84V216Q58 232 72 232H100"/>
+                <circle cx="58" cy="150" r="3"/>
+                <path class="map-arrow" d="m91 63 8 5-8 5m0 154 8 5-8 5"/>
+              </svg>
+              <span>Split outputs</span>
+            </div>
+            <div class="map-outcomes">
+              <article class="map-outcome">
+                <span class="map-outcome-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+                </span>
+                <div>
+                  <h4>Shareable Proof Certificates</h4>
+                  <p><code>publicProof</code> verdict, receiptDigest, sourceHash, and bindingDigest — zero raw inputs exposed.</p>
+                </div>
+              </article>
+              <article class="map-outcome">
+                <span class="map-outcome-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="m9 15 2 2 4-4"/></svg>
+                </span>
+                <div>
+                  <h4>Private Local Evidence</h4>
+                  <p><code>privateEvidence</code>, raw inputs, query counts, and check outputs stay locked on 127.0.0.1.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+          <figcaption id="intelligence-map-note"><span class="map-foot-dot" aria-hidden="true"></span>MCP tools such as <code>vault_run_program</code> and <code>vault_run_program_chain</code> return <code>publicProof</code> with <code>privateEvidence</code> redacted by default.</figcaption>
+        </figure>
+        <div class="reporting">
+          <div>
+            <span class="reporting-label">OPT-IN PUBLIC PUBLISHING</span>
+            <h3>Inspect every triple<br>before anything leaves.</h3>
+          </div>
+          <div>
+            <p>When you want a permanent public record on OriginTrail DKG, the Wallet &amp; Publish tab opens a Privacy Review modal displaying exact triples, secret-scan results, and live native gas / TRAC gauges before your encrypted local keystore signs.</p>
+            <div class="reporting-flow" aria-label="Publishing verification flow">
+              <span>Propose</span><b>→</b><span>WASM Verify</span><b>→</b><span>Privacy Split</span><b>→</b><span>Opt-in Publish</span>
+            </div>
+            <p class="reporting-note">Private keys in the AES-256-GCM keystore are never returned by GET endpoints or logged to the Blackbox Flight Recorder.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section platforms-section" id="platforms" aria-labelledby="platforms-title">
+        <div class="shell">
+          <div class="section-label">PLATFORM ROADMAP</div>
+          <div class="section-head">
+            <h2 id="platforms-title">Available on Windows x64.<br><span>macOS &amp; Linux planned.</span></h2>
+            <p>DKG Graph Local is currently at <code>v0.5.0-pre</code>. Windows x64 is tested with the Tauri 2 desktop shell, Windows glass blur, and native launchers; native macOS and Linux desktop packages are planned for <code>v1.0.0</code> (the core engine and web UI run on Node <code>&gt;= 22.13</code>).</p>
+          </div>
+          <div class="platform-grid">
+            <div class="platform-card">
+              <span class="platform-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" focusable="false"><path d="M2 2h9v9H2zM13 2h9v9h-9zM2 13h9v9H2zM13 13h9v9h-9z"/></svg></span>
+              <strong>Windows</strong>
+              <span class="platform-status is-available">Available in v0.5.0-pre</span>
+            </div>
+            <div class="platform-card">
+              <span class="platform-symbol" aria-hidden="true"><img src="assets/icons/apple.svg" width="44" height="44" alt="" loading="lazy"></span>
+              <strong>macOS</strong>
+              <span class="platform-status">Planned for v1.0.0</span>
+            </div>
+            <div class="platform-card">
+              <span class="platform-symbol" aria-hidden="true"><img src="assets/icons/linux.svg" width="44" height="44" alt="" loading="lazy"></span>
+              <strong>Linux</strong>
+              <span class="platform-status">Planned for v1.0.0</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section shell community" id="community" aria-labelledby="community-title">
+        <div class="community-main">
+          <div>
+            <div class="section-label">OPEN SOURCE WITHIN OPENDKG</div>
+            <h2 id="community-title">Built in the open.<br><span>Verifiable by design.</span></h2>
+            <p>DKG Graph Local is an independent open-source project affiliated with the OpenDKG initiative and licensed under GNU GPL v3.0 or later (<code>GPL-3.0-or-later</code>). OpenDKG builds practical, local-first software around verifiable knowledge graphs.</p>
+            <a class="text-link" href="https://github.com/OpenDKG" target="_blank" rel="noopener noreferrer">Explore OpenDKG on GitHub <svg class="link-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12 12 4M6 4h6v6"/></svg></a>
+          </div>
+          <div class="community-brand">
+            <img class="community-wave" src="assets/opendkg-wave.svg" width="621" height="180" alt="" loading="lazy" decoding="async" aria-hidden="true">
+            <img class="community-lockup" src="assets/opendkg-titanium.webp" width="420" height="294" loading="lazy" decoding="async" alt="OpenDKG logo">
+            <small>OPEN-SOURCE ORGANIZATION</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="section shell download-section" id="download" aria-labelledby="download-title">
+        <div class="download-box">
+          <div>
+            <div class="eyebrow"><span class="eyebrow-marker"></span> DKG GRAPH LOCAL · V0.5.0-PRE</div>
+            <h2 id="download-title">Private knowledge memory.<br><span>Ready for inspection.</span></h2>
+            <p>Currently in active pre-release development (<code>v0.5.0-pre</code>, <code>GPL-3.0-or-later</code>). Windows x64 is supported now with the Tauri 2 desktop app and Node <code>&gt;= 22.13</code> engine; native Linux and macOS installers plus full security audits are planned for <code>v1.0.0</code>.</p>
+          </div>
+          <div class="download-actions">
+            <a class="button button-primary" href="https://github.com/OpenDKG" target="_blank" rel="noopener noreferrer">Visit OpenDKG on GitHub <svg class="link-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12 12 4M6 4h6v6"/></svg></a>
+            <a class="text-link" href="https://opendkg.org/donate/"><img src="assets/icons/ethereum.png" alt="" width="12" height="20">Donate crypto</a>
+            <span>Windows x64 active development · Linux &amp; macOS planned for v1.0.0 · GPL-3.0-or-later</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-main">
+        <div class="footer-brand">
+          <a href="#top" aria-label="DKG Graph Local — back to top">
+            <span class="brand-lockup">
+              <img src="assets/app-icon.png" width="256" height="256" loading="lazy" alt="">
+              <span>DKG Graph Local</span>
+            </span>
+          </a>
+          <p>Local-first neuro-symbolic knowledge vault. Zero gas by default. Verifiable proofs on 127.0.0.1.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#vault">Knowledge Vault</a>
+          <a href="#how-it-works">How it works</a>
+          <a href="#architecture">Architecture</a>
+          <a href="#platforms">Platforms</a>
+          <a href="#community">OpenDKG</a>
+          <a href="https://opendkg.org/">opendkg.org</a>
+          <a href="https://opendkg.org/privacy/">Privacy</a>
+          <a href="https://github.com/OpenDKG" target="_blank" rel="noopener noreferrer">GitHub <svg class="link-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12 12 4M6 4h6v6"/></svg></a>
+        </div>
+      </div>
+      <div class="shell footer-bottom">
+        <span>© <span id="year">2026</span> The DKG Graph Local contributors · GPL-3.0-or-later.</span>
+        <span>Independent OpenDKG project · Optional DKG and local LLM integrations do not imply endorsement.</span>
+      </div>
+    </footer>
+  </div>
+
+  <aside id="privacy-notice" class="privacy-notice" role="region" aria-label="Privacy notice">
+    <div class="privacy-notice-inner">
+      <p class="privacy-notice-copy">
+        <span class="privacy-notice-dot" aria-hidden="true"></span>
+        <span><strong>No cookies or tracking.</strong> This site uses zero cookies or analytics, and DKG Graph Local runs privately on 127.0.0.1 with zero cloud telemetry.</span>
+      </p>
+      <div class="privacy-notice-actions">
+        <a class="privacy-notice-link" href="https://opendkg.org/privacy/">Privacy Policy</a>
+        <button type="button" class="privacy-notice-btn" id="privacy-notice-dismiss">Got it</button>
+      </div>
+    </div>
+  </aside>
+</body>
+</html>

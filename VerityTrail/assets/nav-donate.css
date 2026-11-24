@@ -1,0 +1,12 @@
+.desktop-nav a.nav-donate,
+.mobile-nav a.nav-donate {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--white);
+  white-space: nowrap;
+}
+
+.mobile-nav a.nav-donate {
+  min-height: 44px;
+}

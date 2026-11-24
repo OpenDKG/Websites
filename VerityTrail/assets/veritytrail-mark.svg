@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" fill="none">
+  <defs>
+    <linearGradient id="vt-brand-grad" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7BAEE8"/>
+      <stop offset="1" stop-color="#3D6BA8"/>
+    </linearGradient>
+  </defs>
+  <rect width="24" height="24" rx="7" fill="url(#vt-brand-grad)"/>
+  <g transform="translate(3 3) scale(0.75)">
+    <path d="M5 6L12 18L19 6" stroke="#FFFFFF" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="5" cy="6" r="2.5" fill="#FFFFFF"/>
+    <circle cx="19" cy="6" r="2.5" fill="#FFFFFF"/>
+    <circle cx="12" cy="18" r="2.5" fill="#FFFFFF"/>
+  </g>
+</svg>

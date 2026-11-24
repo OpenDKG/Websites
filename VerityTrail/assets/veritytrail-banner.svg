@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 420" width="1400" height="420" fill="none">
+  <defs>
+    <linearGradient id="vt-bg" x1="0" y1="0" x2="1400" y2="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#111317"/>
+      <stop offset="0.55" stop-color="#171B23"/>
+      <stop offset="1" stop-color="#202633"/>
+    </linearGradient>
+    <radialGradient id="vt-glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(260 110) rotate(12) scale(520 220)">
+      <stop offset="0" stop-color="#6EA3E6" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#6EA3E6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="vt-accent-line" x1="64" y1="0" x2="1336" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6EA3E6" stop-opacity="0"/>
+      <stop offset="0.18" stop-color="#9AA6B8" stop-opacity="0.33"/>
+      <stop offset="0.50" stop-color="#7BAEE8" stop-opacity="0.80"/>
+      <stop offset="0.82" stop-color="#9AA6B8" stop-opacity="0.33"/>
+      <stop offset="1" stop-color="#6EA3E6" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="vt-mark-grad" x1="64" y1="54" x2="148" y2="138" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7BAEE8"/>
+      <stop offset="1" stop-color="#3D6BA8"/>
+    </linearGradient>
+    <linearGradient id="vt-card" x1="0" y1="214" x2="0" y2="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1E222A"/>
+      <stop offset="1" stop-color="#181B22"/>
+    </linearGradient>
+    <linearGradient id="vt-card-active" x1="0" y1="214" x2="0" y2="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#222A38"/>
+      <stop offset="1" stop-color="#181E29"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="420" rx="16" fill="url(#vt-bg)"/>
+  <rect width="1400" height="420" rx="16" fill="url(#vt-glow)"/>
+  <rect x="0.75" y="0.75" width="1398.5" height="418.5" rx="15.25" stroke="#2B313D" stroke-width="1.5"/>
+  <rect x="64" y="1" width="1272" height="1.5" fill="url(#vt-accent-line)"/>
+
+  <!-- Subtle background grid -->
+  <g stroke="#252B36" stroke-width="1" opacity="0.55">
+    <line x1="64" y1="184" x2="1336" y2="184"/>
+  </g>
+
+  <!-- BrandMark -->
+  <rect x="64" y="54" width="84" height="84" rx="24.5" fill="url(#vt-mark-grad)"/>
+  <g transform="translate(74.5 64.5) scale(2.625)">
+    <path d="M5 6L12 18L19 6" stroke="#FFFFFF" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="5" cy="6" r="2.5" fill="#FFFFFF"/>
+    <circle cx="19" cy="6" r="2.5" fill="#FFFFFF"/>
+    <circle cx="12" cy="18" r="2.5" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Title & Subtitle -->
+  <circle cx="182" cy="63" r="4" fill="#4ADE80"/>
+  <text x="195" y="67" fill="#8EB8EE" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" font-weight="700" letter-spacing="2.2">LOCAL-FIRST SECURITY ASSURANCE LAB</text>
+  <text x="176" y="114" fill="#F3F4F6" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="46" font-weight="700" letter-spacing="-1.2">VerityTrail</text>
+  <text x="176" y="146" fill="#C6CCD6" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="17" font-weight="400">Offline SHA-256 snapshots, CWE static checks, isolated sandboxes &amp; verifiable fix proofs</text>
+
+  <!-- Status pills -->
+  <rect x="988" y="56" width="154" height="32" rx="6" fill="#1D2B3E" stroke="#3D6BA8" stroke-width="1"/>
+  <text x="1065" y="76" text-anchor="middle" fill="#8EB8EE" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" font-weight="700" letter-spacing="0.8">RC 0.1.0 · WIN x64</text>
+
+  <rect x="1154" y="56" width="182" height="32" rx="6" fill="#152E22" stroke="#2D6A4A" stroke-width="1"/>
+  <circle cx="1174" cy="72" r="4" fill="#4ADE80"/>
+  <text x="1252" y="76" text-anchor="middle" fill="#4ADE80" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" font-weight="700" letter-spacing="0.6">180/180 TESTS PASS</text>
+
+  <!-- 5-Step Pipeline Cards -->
+  <!-- Step 1: Projects -->
+  <g>
+    <rect x="64" y="214" width="232" height="146" rx="10" fill="url(#vt-card)" stroke="#2B313D" stroke-width="1.2"/>
+    <rect x="82" y="232" width="32" height="22" rx="5" fill="#1D2B3E"/>
+    <text x="98" y="247" text-anchor="middle" fill="#6EA3E6" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" font-weight="700">01</text>
+    <text x="124" y="247" fill="#8E97A8" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" font-weight="700" letter-spacing="1.2">IMPORT</text>
+    <text x="82" y="284" fill="#F3F4F6" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" font-weight="700">Projects</text>
+    <text x="82" y="312" fill="#C6CCD6" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13">Safe SHA-256 snapshot</text>
+    <text x="82" y="334" fill="#8E97A8" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12">Excludes .env, keys &amp; secrets</text>
+  </g>
+
+  <!-- Connector 1 -> 2 -->
+  <path d="M300 287H318M313 282L319 287L313 292" stroke="#6EA3E6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Step 2: Code & Stack -->
+  <g>
+    <rect x="324" y="214" width="232" height="146" rx="10" fill="url(#vt-card)" stroke="#2B313D" stroke-width="1.2"/>
+    <rect x="342" y="232" width="32" height="22" rx="5" fill="#1D2B3E"/>
+    <text x="358" y="247" text-anchor="middle" fill="#6EA3E6" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" font-weight="700">02</text>
+    <text x="384" y="247" fill="#8E97A8" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" font-weight="700" letter-spacing="1.2">INVENTORY</text>
+    <text x="342" y="284" fill="#F3F4F6" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" font-weight="700">Code &amp; Stack</text>
+    <text x="342" y="312" fill="#C6CCD6" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13">25+ languages &amp; SBOM</text>
+    <text x="342" y="334" fill="#8E97A8" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12">CycloneDX 1.5 · Confirmed facts</text>
+  </g>
+
+  <!-- Connector 2 -> 3 -->
+  <path d="M560 287H578M573 282L579 287L573 292" stroke="#6EA3E6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Step 3: Findings -->
+  <g>
+    <rect x="584" y="214" width="232" height="146" rx="10" fill="url(#vt-card)" stroke="#2B313D" stroke-width="1.2"/>
+    <rect x="602" y="232" width="32" height="22" rx="5" fill="#1D2B3E"/>
+    <text x="618" y="247" text-anchor="middle" fill="#6EA3E6" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" font-weight="700">03</text>
+    <text x="644" y="247" fill="#8E97A8" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" font-weight="700" letter-spacing="1.2">ANALYZE</text>
+    <text x="602" y="284" fill="#F3F4F6" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" font-weight="700">Findings</text>
+    <text x="602" y="312" fill="#C6CCD6" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13">CWE SAST &amp; advisories</text>
+    <text x="602" y="334" fill="#8E97A8" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12">SHA-256 FindingFingerprints</text>
+  </g>
+
+  <!-- Connector 3 -> 4 -->
+  <path d="M820 287H838M833 282L839 287L833 292" stroke="#8EB8EE" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Step 4: VM Lab -->
+  <g>
+    <rect x="844" y="214" width="232" height="146" rx="10" fill="url(#vt-card-active)" stroke="#475164" stroke-width="1.4"/>
+    <rect x="862" y="232" width="32" height="22" rx="5" fill="#1D2B3E"/>
+    <text x="878" y="247" text-anchor="middle" fill="#8EB8EE" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" font-weight="700">04</text>
+    <text x="904" y="247" fill="#8EB8EE" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" font-weight="700" letter-spacing="1.2">SANDBOX</text>
+    <text x="862" y="284" fill="#F3F4F6" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" font-weight="700">VM Lab</text>
+    <text x="862" y="312" fill="#C6CCD6" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13">Isolated runtime checks</text>
+    <text x="862" y="334" fill="#8E97A8" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12">WSL2 / Hyper-V / VirtualBox</text>
+  </g>
+
+  <!-- Connector 4 -> 5 -->
+  <path d="M1080 287H1098M1093 282L1099 287L1093 292" stroke="#4ADE80" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Step 5: AI & Proof -->
+  <g>
+    <rect x="1104" y="214" width="232" height="146" rx="10" fill="url(#vt-card-active)" stroke="#2D6A4A" stroke-width="1.4"/>
+    <rect x="1122" y="232" width="32" height="22" rx="5" fill="#152E22"/>
+    <text x="1138" y="247" text-anchor="middle" fill="#4ADE80" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" font-weight="700">05</text>
+    <text x="1164" y="247" fill="#4ADE80" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" font-weight="700" letter-spacing="1.2">CLOSURE</text>
+    <text x="1122" y="284" fill="#F3F4F6" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" font-weight="700">AI &amp; Proof</text>
+    <text x="1122" y="312" fill="#C6CCD6" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13">Read-only guard &amp; diff</text>
+    <text x="1122" y="334" fill="#8E97A8" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12">Verified fixed · Optional DKG</text>
+  </g>
+</svg>

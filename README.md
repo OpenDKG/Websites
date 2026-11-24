@@ -1,6 +1,6 @@
 # OpenDKG Websites
 
-Public monorepo for the OpenDKG umbrella website (`opendkg.org`) and the Axiom project website (`opendkg.org/axiom/`).
+Public monorepo for the OpenDKG umbrella website (`opendkg.org`) and standalone project sites (`axiom/`, `Desktop/`, `Graph/`, `VerityTrail/`).
 
 ## Repository layout
 
@@ -10,8 +10,11 @@ opendkg.org/            Main OpenDKG site (HTML/CSS, CSP headers, link checker, 
   scripts/              Site link and metadata checker
   test/                 Automated tests, claim checklist, and audit notes
 axiom/                  Axiom project site, built into /axiom/
+Desktop/                OpenDKG Desktop project site, built into /desktop/
+Graph/                  DKG Graph Local project site, built into /graph/
+VerityTrail/            VerityTrail project site, built into /veritytrail/
 scripts/
-  build.mjs             Assembles opendkg.org/public/ and axiom/ into dist/
+  build.mjs             Assembles opendkg.org/public/ and project sites into dist/
 dist/                   Generated Cloudflare Pages output (gitignored)
 ```
 
@@ -42,7 +45,7 @@ Cloudflare Pages builds directly from `main` in this repository:
 - **Build output directory:** `dist`
 - **Root directory:** *(empty / repository root)*
 
-Every push to `main` builds `opendkg.org/public/` and `axiom/` together into `dist/` (excluding Axiom repository housekeeping files such as `README.md`, `.gitignore`, `.gitattributes`, and `.github/`) and deploys to `https://opendkg.org/`.
+Every push to `main` assembles `opendkg.org/public/` along with `axiom/` (`/axiom/`), `Desktop/` (`/desktop/`), `Graph/` (`/graph/`), and `VerityTrail/` (`/veritytrail/`) into `dist/` (excluding repository housekeeping files such as `README.md`, `.gitignore`, `.gitattributes`, and `.github/`) and deploys to `https://opendkg.org/`.
 
 ## License
 

@@ -1,0 +1,486 @@
+<!doctype html>
+<!-- Source: OpenDKG. Served at https://opendkg.org/desktop/ via the opendkg.org Pages build. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0e10">
+  <meta name="description" content="OpenDKG Desktop is a local-first AI gateway, 3-layer agent memory hub, and OriginTrail OT-RFC-27 desktop application for Windows, macOS, and Linux.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="OpenDKG Desktop — Local-First AI Gateway &amp; OT-RFC-27 Hub">
+  <meta property="og:description" content="Connect AI coding agents through one private 127.0.0.1:4820 gateway with Spend Guard, 3-layer shared memory, and self-custody DKG v10 wallets on Base.">
+  <meta property="og:image" content="https://opendkg.org/desktop/assets/banner.png">
+  <link rel="canonical" href="https://opendkg.org/desktop/">
+  <meta property="og:url" content="https://opendkg.org/desktop/">
+  <title>OpenDKG Desktop — Local-First AI Gateway &amp; OT-RFC-27 Hub</title>
+  <link rel="icon" type="image/png" href="assets/icon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/icon-128.png">
+  <link rel="preload" href="assets/fonts/Manrope-var.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="assets/site.css">
+  <link rel="stylesheet" href="assets/titanium.css">
+  <link rel="stylesheet" href="assets/refinements.css">
+  <link rel="stylesheet" href="assets/silver-home.css">
+  <link rel="stylesheet" href="assets/silver-effects.css">
+  <link rel="stylesheet" href="assets/nav-donate.css">
+  <link rel="stylesheet" href="assets/privacy-notice.css">
+  <link rel="stylesheet" href="assets/theme.css">
+  <script src="assets/site.js" defer></script>
+  <script src="assets/privacy-notice.js" defer></script>
+</head>
+<body class="home-page" id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="site-frame">
+    <header class="site-header">
+      <div class="shell nav-bar">
+        <a class="logo-link" href="#top" aria-label="OpenDKG Desktop — back to top">
+          <span class="brand-lockup">
+            <img src="assets/icon.svg" width="34" height="34" alt="">
+            <span class="brand-lockup-text">OpenDKG Desktop</span>
+          </span>
+        </a>
+        <nav class="desktop-nav" aria-label="Main navigation">
+          <a href="#gateway">Gateway</a>
+          <a href="#how-it-works">How it works</a>
+          <a href="#architecture">Architecture</a>
+          <a href="#platforms">Platforms</a>
+          <a href="#community">Community</a>
+          <a class="nav-donate" href="https://opendkg.org/donate/"><img src="assets/icons/ethereum.png" alt="" width="9" height="15">Donate</a>
+          <a class="nav-opendkg" href="https://opendkg.org/">OpenDKG</a>
+        </nav>
+        <a class="nav-cta" href="#download">Get Desktop <svg class="link-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12 12 4M6 4h6v6"/></svg></a>
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
+      </div>
+      <nav class="mobile-nav" id="mobile-menu" aria-label="Mobile navigation" hidden>
+        <a href="#gateway">Gateway</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#platforms">Platforms</a>
+        <a href="#community">Community</a>
+        <a href="#download">Get Desktop</a>
+        <a class="nav-donate" href="https://opendkg.org/donate/"><img src="assets/icons/ethereum.png" alt="" width="9" height="15">Donate</a>
+        <a class="nav-opendkg" href="https://opendkg.org/">OpenDKG</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero shell" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-marker"></span> LOCAL-FIRST AI GATEWAY &amp; OT-RFC-27 HUB</div>
+          <h1 id="hero-title">One local gateway.<br><em>Every AI tool in sync.</em></h1>
+          <p class="hero-intro">Connect Cursor, Claude Code, Codex, Windsurf, and local runtimes through a private <code>127.0.0.1:4820</code> hub with secret scrubbing, spend caps, shared 3-layer memory, and self-custody DKG v10 wallets on Base.</p>
+          <div class="hero-actions">
+            <a href="#gateway" class="button button-primary">Explore Gateway <svg class="link-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12 12 4M6 4h6v6"/></svg></a>
+            <a href="#architecture" class="text-link">See architecture <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="platform-line"><span class="platform-dash"></span> Built for <strong>Windows</strong><span class="dot">·</span><strong>macOS</strong><span class="dot">·</span><strong>Linux</strong></div>
+        </div>
+        <div class="hero-visual" aria-label="OpenDKG Desktop v0.5.0 Obsidian theme screenshot">
+          <img class="hero-shield" src="assets/logo.png" width="1024" height="1024" alt="" aria-hidden="true">
+          <div class="dashboard-frame">
+            <img src="assets/app-screenshot.png" width="1920" height="1041" alt="OpenDKG Desktop v0.5.0 in the Obsidian dark theme showing Simple and Advanced mode switching, Spend Guard, live GPU telemetry, and Instant Answer Cache" loading="eager" fetchpriority="high">
+          </div>
+          <div class="visual-caption"><span class="caption-pulse"></span> Real desktop interface (v0.5.0) <span class="caption-divider"></span> Local-first by design</div>
+        </div>
+      </section>
+
+      <div class="trust-strip" aria-label="Core pillars">
+        <div class="shell strip-inner">
+          <span>LOCAL GATEWAY 127.0.0.1:4820</span>
+          <span>3-LAYER AGENT MEMORY</span>
+          <span>SELF-CUSTODY DKG V10</span>
+          <span>ZERO TELEMETRY</span>
+        </div>
+      </div>
+
+      <section class="section shell banner-showcase" id="quick-start" aria-labelledby="quickstart-title">
+        <div class="section-label">HOW IT FITS TOGETHER</div>
+        <div class="section-head">
+          <h2 id="quickstart-title">Simple to start.<br><span>Built for full control.</span></h2>
+          <p>Switch seamlessly between streamlined Simple Mode and full-telemetry Advanced Mode from the titlebar, across five built-in themes including Obsidian.</p>
+        </div>
+        <div class="banner-frame">
+          <img src="assets/banner.png" width="1376" height="768" alt="OpenDKG Desktop — Local-First AI Gateway, Shared Agent Memory and Verifiable Marketplace banner" loading="lazy" decoding="async">
+        </div>
+        <div class="quickstart-grid">
+          <article class="quickstart-card">
+            <span class="quickstart-step">STEP 01</span>
+            <h3>1. Connect Any AI App Once</h3>
+            <p>Point Cursor, Claude Code, Codex, Windsurf, Cline, Continue, OpenCode, Ollama, LM Studio, or any OpenAI, Anthropic, or MCP client to <code>127.0.0.1:4820</code> while preserving config backups.</p>
+          </article>
+          <article class="quickstart-card">
+            <span class="quickstart-step">STEP 02</span>
+            <h3>2. Switch Modes &amp; Guard Spend</h3>
+            <p>Choose Private Local so nothing leaves your PC, Smart Saver for semantic caching and cheapest eligible routing, or Verified Cloud with independent metering and secret scrubbing.</p>
+          </article>
+          <article class="quickstart-card">
+            <span class="quickstart-step">STEP 03</span>
+            <h3>3. Share Memory, Publish &amp; Earn</h3>
+            <p>Save architectural rules and project notes once across all tools, publish chosen Knowledge Assets to the OriginTrail DKG, or serve idle local Ollama models and graphs for $TRAC.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section shell section-protection" id="gateway" aria-labelledby="gateway-title">
+        <div class="section-label">THE ROUTING &amp; MEMORY MODEL</div>
+        <div class="section-head">
+          <h2 id="gateway-title">Local-first routing.<br><span>Persistent shared context.</span></h2>
+          <p>Keep sensitive prompts on your machine or route transparently across local runtimes, Web2 keys in your OS Keychain, and OriginTrail OT-RFC-27 marketplace offers.</p>
+        </div>
+        <div class="threat-pair">
+          <article class="threat-panel">
+            <div class="panel-heading">
+              <span class="line-icon line-icon-agent" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20v2"/><path d="M12 2v2"/><path d="M17 20v2"/><path d="M17 2v2"/><path d="M2 12h2"/><path d="M2 17h2"/><path d="M2 7h2"/><path d="M20 12h2"/><path d="M20 17h2"/><path d="M20 7h2"/><path d="M7 20v2"/><path d="M7 2v2"/><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="8" y="8" width="8" height="8" rx="1"/></svg>
+              </span>
+              <span class="panel-index">PRIVATE LOCAL &amp; SMART SAVER</span>
+            </div>
+            <h3>Route every request by privacy and budget.</h3>
+            <p>Run Private Local strictly on Ollama, LM Studio, vLLM, or llama.cpp, or enable Smart Saver with the Instant Answer semantic cache, automatic failover, and Verified Cloud billing protection.</p>
+            <div class="panel-foot">Loopback OpenAI / Anthropic / MCP proxy <svg class="link-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12 12 4M6 4h6v6"/></svg></div>
+          </article>
+          <article class="threat-panel">
+            <div class="panel-heading">
+              <span class="line-icon line-icon-system" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>
+              </span>
+              <span class="panel-index">3-LAYER CONTEXT &amp; VERIFIABLE UAL</span>
+            </div>
+            <h3>Share project memory across every tool.</h3>
+            <p>Separate Working Private notes from Shared Working folders indexed in embedded Oxigraph + SQLite with W3C JSON-LD and N-Triples export, and publish selected cards to Layer 3 as verifiable <code>did:dkg:...</code> UALs.</p>
+            <div class="panel-foot">Embedded Oxigraph + DKG v10 provenance <svg class="link-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12 12 4M6 4h6v6"/></svg></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-os" id="architecture" aria-labelledby="architecture-title">
+        <div class="shell os-layout">
+          <div class="os-copy">
+            <div class="section-label">PRIVACY SHIELD &amp; SPEND GUARD</div>
+            <h2 id="architecture-title">Custody, metering, and secrets.<br><span>Enforced on your machine.</span></h2>
+            <p>Built on Tauri v2 and Rust with an isolated OT-RFC-27 sidecar, OpenDKG Desktop keeps keys, budget ceilings, and secret redaction under local control.</p>
+            <ul class="feature-list">
+              <li>
+                <span class="mini-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg>
+                </span>
+                <div>
+                  <strong>Local 127.0.0.1:4820 OpenAI, Anthropic &amp; MCP proxy</strong>
+                  <span>Unified loopback endpoints with secret/PII redaction and prompt replay.</span>
+                </div>
+              </li>
+              <li>
+                <span class="mini-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+                </span>
+                <div>
+                  <strong>Spend Guard &amp; Dispute Proofs</strong>
+                  <span>Monthly caps, Instant Answer Cache, and automatic <code>dispute-proof.json</code> freezing when provider claims exceed measured usage by &gt; 3%.</span>
+                </div>
+              </li>
+              <li>
+                <span class="mini-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </span>
+                <div>
+                  <strong>Self-Custody Hot vs. Watch-Only Wallet on Base</strong>
+                  <span>Operational Hot Wallet encrypted in OS Keychain; Main Payout address stays watch-only with EIP-1559 Base ETH and ERC-20 TRAC transfers.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="os-art">
+            <div class="os-surface">
+              <div class="os-surface-top">
+                <span class="os-label">LIVE GATEWAY / TELEMETRY</span>
+                <span class="os-dots">● ● ●</span>
+              </div>
+              <div class="os-insight">
+                <img class="os-insight-mark" src="assets/icon.svg" width="56" height="56" alt="" loading="lazy">
+                <div>
+                  <span class="metric-caption">RUST GATEWAY &amp; POLICY ENGINE</span>
+                  <div class="os-insight-title">Local metering. Verified custody.</div>
+                </div>
+              </div>
+              <div class="os-bars" aria-hidden="true">
+                <span style="--v:36%"></span>
+                <span style="--v:56%"></span>
+                <span class="bar-cyan" style="--v:44%"></span>
+                <span style="--v:72%"></span>
+                <span style="--v:62%"></span>
+                <span class="bar-cyan" style="--v:81%"></span>
+                <span style="--v:58%"></span>
+                <span style="--v:92%"></span>
+                <span class="bar-amber" style="--v:68%"></span>
+                <span style="--v:84%"></span>
+                <span class="bar-cyan" style="--v:66%"></span>
+              </div>
+              <div class="os-stats">
+                <div><span>GATEWAY</span><strong>127.0.0.1:4820</strong></div>
+                <div><span>CUSTODY</span><strong>OS Keychain</strong></div>
+                <div><span>POWER / GPU</span><strong>Local Telemetry</strong></div>
+              </div>
+            </div>
+            <p class="art-caption">Illustrative overview — live GPU/CPU power, cache hits, and spend limits are tracked locally inside OpenDKG Desktop.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section shell method" id="how-it-works" aria-labelledby="method-title">
+        <div class="section-label">FOUR-STAGE WORKFLOW</div>
+        <div class="section-head">
+          <h2 id="method-title">Connect. Route.<br><span>Remember. Earn.</span></h2>
+          <p>Every coding assistant, local model, and OT-RFC-27 workflow runs through one deterministic pipeline on your desktop.</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <span class="step-index">01</span>
+            <h3>Connect</h3>
+            <p>Auto-detect and configure coding tools and local runtimes with safe config backups.</p>
+          </div>
+          <div class="step">
+            <span class="step-index">02</span>
+            <h3>Route</h3>
+            <p>Apply Private Local, Smart Saver, or Verified Cloud policies with secret redaction.</p>
+          </div>
+          <div class="step">
+            <span class="step-index">03</span>
+            <h3>Remember</h3>
+            <p>Index shared context in Oxigraph + SQLite and inspect 3-column DKG provenance.</p>
+          </div>
+          <div class="step">
+            <span class="step-index">04</span>
+            <h3>Earn / Publish</h3>
+            <p>Publish Knowledge Assets with UALs or rent idle Ollama compute and graphs for $TRAC.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-offline" id="offline" aria-labelledby="offline-title">
+        <div class="shell offline-layout">
+          <div class="offline-mark" aria-hidden="true">
+            <img src="assets/logo.png" width="1024" height="1024" alt="" loading="lazy">
+          </div>
+          <div class="offline-copy">
+            <div class="section-label">LOCAL-FIRST CONTINUITY</div>
+            <h2 id="offline-title">Private Local mode and Keychain safety built in.</h2>
+            <p>Switch to <strong>Private Local</strong> anytime so prompts and project files never leave your machine. Your Operational Hot Wallet key stays encrypted inside your OS Keychain or Windows Credential Manager, while your external treasury address remains strictly watch-only.</p>
+            <div class="offline-footnote">
+              <span class="footnote-mark"></span>
+              <span>RAM-fallback safety: if OS Keychain persistence is unavailable and the session falls back to RAM-only storage, OpenDKG Desktop hides the deposit address and warns you before sending Base ETH or TRAC.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section shell intelligence" id="ecosystem" aria-labelledby="ecosystem-title">
+        <div class="section-label">NEURO-SYMBOLIC ECOSYSTEM</div>
+        <div class="section-head">
+          <h2 id="ecosystem-title">Local AI tools.<br><span>Verifiable DKG marketplace.</span></h2>
+          <p>Bridge everyday coding assistants and local runtimes with OriginTrail DKG v10, x402 payments, and ERC-8004 marketplace workflows — without giving up custody.</p>
+        </div>
+        <figure id="intelligence-map" class="intelligence-map" aria-labelledby="intelligence-map-title" aria-describedby="intelligence-map-note">
+          <div class="intelligence-map-heading">
+            <div>
+              <span class="map-eyebrow">THE OPENDKG DESKTOP LOOP</span>
+              <h3 id="intelligence-map-title">One local hub. Open protocols.</h3>
+            </div>
+            <span class="map-optional">Base Mainnet · Sepolia · Sandbox</span>
+          </div>
+          <div class="intelligence-map-grid">
+            <div class="map-partners">
+              <article class="map-partner">
+                <span class="map-node-label">VERIFIABLE PROTOCOL</span>
+                <img class="map-origintrail" src="assets/brands/origintrail.webp" width="416" height="94" alt="OriginTrail" loading="lazy">
+                <h4>OriginTrail DKG v10 &amp; OT-RFC-27</h4>
+                <p>Verifiable Knowledge Assets, Base x402 settlement,<br>and ERC-8004 agent/compute offers.</p>
+              </article>
+              <article class="map-partner">
+                <span class="map-node-label">TOOLS &amp; INFERENCE</span>
+                <span class="vendor-emblem" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" focusable="false"><polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/></svg>
+                </span>
+                <h4>Coding Agents &amp; Local Runtimes</h4>
+                <p>Cursor, Claude Code, Codex, Windsurf, Cline,<br>Ollama, LM Studio, vLLM &amp; llama.cpp.</p>
+              </article>
+            </div>
+            <div class="map-connector map-connector-in" aria-hidden="true">
+              <svg viewBox="0 0 100 300" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="map-line-in" x1="0" x2="1">
+                    <stop stop-color="#14b8a6"/>
+                    <stop offset="0.6" stop-color="#5eead4"/>
+                    <stop offset="1" stop-color="#38bdf8"/>
+                  </linearGradient>
+                </defs>
+                <path d="M0 68H28Q42 68 42 84V216Q42 232 28 232H0M42 150H100"/>
+                <circle cx="42" cy="150" r="3"/>
+                <path class="map-arrow" d="m91 145 8 5-8 5"/>
+              </svg>
+              <span>Requests &amp; DKG</span>
+            </div>
+            <div class="map-axiom">
+              <span class="map-node-label">ON YOUR MACHINE</span>
+              <img src="assets/logo.png" width="1024" height="1024" alt="OpenDKG Desktop emblem" loading="lazy">
+              <strong>OPENDKG DESKTOP</strong>
+              <span class="map-core-tag">127.0.0.1:4820 · RUST CORE</span>
+              <p>Guard spend. Scrub secrets.<br>Sync 3-layer memory.</p>
+              <div class="map-return-label">Self-custody signing</div>
+            </div>
+            <div class="map-connector map-connector-out" aria-hidden="true">
+              <svg viewBox="0 0 100 300" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="map-line-out" x1="0" x2="1">
+                    <stop stop-color="#38bdf8"/>
+                    <stop offset="0.5" stop-color="#2dd4bf"/>
+                    <stop offset="1" stop-color="#14b8a6"/>
+                  </linearGradient>
+                </defs>
+                <path d="M0 150H58M100 68H72Q58 68 58 84V216Q58 232 72 232H100"/>
+                <circle cx="58" cy="150" r="3"/>
+                <path class="map-arrow" d="m91 63 8 5-8 5m0 154 8 5-8 5"/>
+              </svg>
+              <span>Memory &amp; Value</span>
+            </div>
+            <div class="map-outcomes">
+              <article class="map-outcome">
+                <span class="map-outcome-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>
+                </span>
+                <div>
+                  <h4>Shared 3-Layer Memory</h4>
+                  <p>Working Private, Shared Working context graph,<br>and Verifiable UALs on DKG v10.</p>
+                </div>
+              </article>
+              <article class="map-outcome">
+                <span class="map-outcome-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                </span>
+                <div>
+                  <h4>Spend Guard &amp; $TRAC Marketplace</h4>
+                  <p>Independent metering, dispute proofs,<br>Rent AI offers, and Earn Money provider mode.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+          <figcaption id="intelligence-map-note">
+            <span class="map-foot-dot" aria-hidden="true"></span>
+            Private Local keeps all inference on your device. Marketplace publishing, Rent AI, and Earn Money run only when you enable them.
+          </figcaption>
+        </figure>
+        <div class="reporting">
+          <div>
+            <span class="reporting-label">KNOWLEDGE PUBLISHING &amp; EARNING</span>
+            <h3>Publish by choice.<br>Withdraw when needed.</h3>
+          </div>
+          <div>
+            <p>Inspect provenance across Publishers, Published DKG Assets, and Folders &amp; Topics, pull external <code>did:dkg:...</code> Knowledge Assets by UAL, or withdraw local and marketplace sharing with <code>DELETE /api/knowledge-assets/{ual}</code> on your configured node.</p>
+            <div class="reporting-flow" aria-label="Knowledge publishing process">
+              <span>Private</span><b>→</b><span>Shared</span><b>→</b><span>Review</span><b>→</b><span>Publish UAL</span>
+            </div>
+            <p class="reporting-note">Withdrawing stops local and marketplace sharing; public on-chain blockchain anchors remain immutable once committed.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section platforms-section" id="platforms" aria-labelledby="platforms-title">
+        <div class="shell">
+          <div class="section-label">CROSS-PLATFORM ARCHITECTURE</div>
+          <div class="section-head">
+            <h2 id="platforms-title">Designed for the<br><span>systems you use.</span></h2>
+            <p>Built with Tauri v2, Rust, and React 19 for Windows, macOS, and Linux. Version <code>v0.5.0</code> is an active pre-1.0 milestone focused on hardening native installers, OS signing/notarization, and end-to-end security review ahead of <code>v1.0.0</code>.</p>
+          </div>
+          <div class="platform-grid">
+            <div class="platform-card">
+              <span class="platform-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" focusable="false"><path d="M2 2h9v9H2zM13 2h9v9h-9zM2 13h9v9H2zM13 13h9v9h-9z"/></svg></span>
+              <strong>Windows</strong>
+              <span class="platform-note">x64 · NSIS / MSI</span>
+            </div>
+            <div class="platform-card">
+              <span class="platform-symbol" aria-hidden="true"><img src="assets/icons/apple.svg" width="44" height="44" alt="" loading="lazy"></span>
+              <strong>macOS</strong>
+              <span class="platform-note">Apple Silicon &amp; Intel · DMG / App</span>
+            </div>
+            <div class="platform-card">
+              <span class="platform-symbol" aria-hidden="true"><img src="assets/icons/linux.svg" width="44" height="44" alt="" loading="lazy"></span>
+              <strong>Linux</strong>
+              <span class="platform-note">x64 · AppImage / DEB</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section shell community" id="community" aria-labelledby="community-title">
+        <div class="community-main">
+          <div>
+            <div class="section-label">OPEN-SOURCE INITIATIVE</div>
+            <h2 id="community-title">Built in the open.<br><span>Licensed under GPL-3.0.</span></h2>
+            <p>OpenDKG Desktop is an independent open-source project affiliated with the OpenDKG initiative. Its desktop application, local gateway daemon, and core Rust libraries are licensed under <strong>GNU GPL v3.0 or later</strong>.</p>
+            <a class="text-link" href="https://github.com/OpenDKG" target="_blank" rel="noopener noreferrer">Visit OpenDKG on GitHub <svg class="link-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12 12 4M6 4h6v6"/></svg></a>
+          </div>
+          <div class="community-brand">
+            <img class="community-wave" src="assets/opendkg-wave.svg" width="621" height="180" alt="" loading="lazy" decoding="async" aria-hidden="true">
+            <img class="community-lockup" src="assets/opendkg-titanium.webp" width="420" height="294" loading="lazy" decoding="async" alt="OpenDKG logo">
+            <small>OPEN-SOURCE ORGANIZATION</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="section shell download-section" id="download" aria-labelledby="download-title">
+        <div class="download-box">
+          <div>
+            <div class="eyebrow"><span class="eyebrow-marker"></span> OPENDKG DESKTOP · V0.5.0 MILESTONE</div>
+            <h2 id="download-title">Local-first AI.<br><span>Road to v1.0.0.</span></h2>
+            <p><code>v0.5.0</code> is a pre-1.0 milestone in active development. Core desktop UX, self-custody DKG v10 wallet flows, 3-layer memory, and the <code>127.0.0.1:4820</code> gateway are implemented, while multi-platform installer signing and comprehensive code and security reviews are underway ahead of <code>v1.0.0</code>.</p>
+          </div>
+          <div class="download-actions">
+            <a class="button button-primary" href="https://github.com/OpenDKG" target="_blank" rel="noopener noreferrer">Follow on GitHub <svg class="link-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12 12 4M6 4h6v6"/></svg></a>
+            <a class="text-link" href="https://opendkg.org/donate/"><img src="assets/icons/ethereum.png" alt="" width="12" height="20">Donate crypto</a>
+            <a class="text-link" href="https://opendkg.org/">Explore OpenDKG ecosystem</a>
+            <span>v0.5.0 pre-1.0 milestone · Windows, macOS &amp; Linux · Active development</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-main">
+        <div class="footer-brand">
+          <a href="#top" aria-label="OpenDKG Desktop — back to top">
+            <span class="brand-lockup">
+              <img src="assets/icon.svg" width="32" height="32" alt="">
+              <span class="brand-lockup-text">OpenDKG Desktop</span>
+            </span>
+          </a>
+          <p>Local-first AI gateway, 3-layer shared agent memory, and self-custody OT-RFC-27 desktop hub.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#gateway">Gateway</a>
+          <a href="#how-it-works">How it works</a>
+          <a href="#architecture">Architecture</a>
+          <a href="#platforms">Platforms</a>
+          <a href="#community">OpenDKG</a>
+          <a href="https://opendkg.org/privacy/">Privacy</a>
+          <a href="https://github.com/OpenDKG" target="_blank" rel="noopener noreferrer">GitHub <svg class="link-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12 12 4M6 4h6v6"/></svg></a>
+        </div>
+      </div>
+      <div class="shell footer-bottom">
+        <span>© <span id="year">2026</span> OpenDKG Desktop contributors. GPL-3.0-or-later open-source project.</span>
+        <span>Independent project affiliated with OpenDKG · Third-party runtimes and tools remain independent.</span>
+      </div>
+    </footer>
+  </div>
+
+  <aside id="privacy-notice" class="privacy-notice" role="region" aria-label="Privacy notice">
+    <div class="privacy-notice-inner">
+      <p class="privacy-notice-copy">
+        <span class="privacy-notice-dot" aria-hidden="true"></span>
+        <span><strong>No cookies or tracking.</strong> This site uses zero cookies or analytics, and OpenDKG Desktop collects no telemetry. All fonts and assets are self-hosted.</span>
+      </p>
+      <div class="privacy-notice-actions">
+        <a class="privacy-notice-link" href="https://opendkg.org/privacy/">Privacy Policy</a>
+        <button type="button" class="privacy-notice-btn" id="privacy-notice-dismiss">Got it</button>
+      </div>
+    </div>
+  </aside>
+</body>
+</html>
