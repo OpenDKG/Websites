@@ -170,6 +170,15 @@
               </li>
               <li>
                 <span class="mini-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/><path d="M12 10v6"/><path d="m9.5 13.5 2.5-2.5 2.5 2.5"/></svg>
+                </span>
+                <div>
+                  <strong>Native Rust Auto-Sync Watched Folders</strong>
+                  <span>Keep local knowledge fresh with persistent watched directories and debounced background re-indexing for <code>.md</code>, <code>.txt</code>, <code>.pdf</code>, and <code>.docx</code> files.</span>
+                </div>
+              </li>
+              <li>
+                <span class="mini-icon" aria-hidden="true">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
                 </span>
                 <div>
@@ -225,7 +234,7 @@
           <div class="step">
             <span class="step-index">STEP 01</span>
             <h3>Ingest</h3>
-            <p>Drop .md, .txt, .pdf, or .docx files, browse folders locally, load the Sample Pack, or accept Review Inbox candidates.</p>
+            <p>Drop .md, .txt, .pdf, or .docx files, watch local folders for live background re-indexing, load the Sample Pack, or accept Review Inbox candidates.</p>
           </div>
           <div class="step">
             <span class="step-index">STEP 02</span>
@@ -253,7 +262,7 @@
           <div class="offline-copy">
             <div class="section-label">LOCAL-FIRST CONTINUITY</div>
             <h2 id="offline-title">100% private on 127.0.0.1.<br><span>No wallet or gas required.</span></h2>
-            <p>Everything runs locally on your machine by default — SQLite, Oxigraph Working Memory, WASM verification, and the deterministic offline proposer (or optional local Ollama) need zero TRAC tokens, zero gas fees, and zero external cloud accounts. If you ever choose to publish a permanent public Knowledge Asset, the separate Wallet &amp; Publish tab protects keys with AES-256-GCM encryption and inspects every triple in a Privacy Review modal before signing.</p>
+            <p>Everything runs locally on your machine by default — SQLite, Oxigraph Working Memory, WASM verification, and the deterministic offline proposer (or optional local Ollama) need zero TRAC tokens, zero gas fees, and zero external cloud accounts. If you ever choose to publish a permanent public Knowledge Asset, the separate Wallet &amp; Publish tab protects keys with an OS Keychain / Windows Credential Manager-backed AES-256-GCM wallet master key (via native <code>keyring</code> + in-memory <code>k256</code> EIP-191 signing, with local keyfile fallback) and inspects every triple in a Privacy Review modal before signing.</p>
             <div class="offline-footnote"><span class="footnote-mark"></span> Public DKG publishing to NeuroWeb, Gnosis, or Base testnets and mainnets is strictly opt-in and never runs automatically.</div>
           </div>
         </div>
@@ -352,11 +361,11 @@
             <h3>Inspect every triple<br>before anything leaves.</h3>
           </div>
           <div>
-            <p>When you want a permanent public record on OriginTrail DKG, the Wallet &amp; Publish tab opens a Privacy Review modal displaying exact triples, secret-scan results, and live native gas / TRAC gauges before your encrypted local keystore signs.</p>
+            <p>When you want a permanent public record on OriginTrail DKG, the Wallet &amp; Publish tab opens a Privacy Review modal displaying exact triples, secret-scan results, and live native gas / TRAC gauges before your OS Keychain-protected AES-256-GCM local keystore signs.</p>
             <div class="reporting-flow" aria-label="Publishing verification flow">
               <span>Propose</span><b>→</b><span>WASM Verify</span><b>→</b><span>Privacy Split</span><b>→</b><span>Opt-in Publish</span>
             </div>
-            <p class="reporting-note">Private keys in the AES-256-GCM keystore are never returned by GET endpoints or logged to the Blackbox Flight Recorder.</p>
+            <p class="reporting-note">Wallet master keys in OS Keychain / Windows Credential Manager (with local keyfile fallback) and Rust-isolated <code>k256</code> EIP-191 keys are never returned by GET endpoints or logged to the Blackbox Flight Recorder.</p>
           </div>
         </div>
       </section>
@@ -366,7 +375,7 @@
           <div class="section-label">PLATFORM ROADMAP</div>
           <div class="section-head">
             <h2 id="platforms-title">Available on Windows x64.<br><span>macOS &amp; Linux planned.</span></h2>
-            <p>DKG Graph Local is currently at <code>v0.5.0-pre</code>. Windows x64 is tested with the Tauri 2 desktop shell, Windows glass blur, and native launchers; native macOS and Linux desktop packages are planned for <code>v1.0.0</code> (the core engine and web UI run on Node <code>&gt;= 22.13</code>).</p>
+            <p>DKG Graph Local is currently at <code>v0.5.0-pre</code>. Windows x64 is tested with the Tauri 2 desktop shell, native dark/light titlebar sync with smooth hardware-accelerated compositing, Rust folder auto-sync, Windows Credential Manager protection, and native launchers; native macOS and Linux desktop packages are planned for <code>v1.0.0</code> (the core engine and web UI run on Node <code>&gt;= 22.13</code>).</p>
           </div>
           <div class="platform-grid">
             <div class="platform-card">
