@@ -125,7 +125,7 @@ test("Axiom/Windows builds are never called a current release without developmen
   for (const file of await textFiles(publicDir)) {
     if (!file.endsWith(".html")) continue;
     const text = (await readFile(file, "utf8")).replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
-    for (const match of text.matchAll(/current (?:release|installer|stable build)/gi)) {
+    for (const match of text.matchAll(/current (?:release|installer|stable build)|Windows x64 release/gi)) {
       const window = text.slice(Math.max(0, match.index - 200), match.index + 200);
       if (/axiom|windows/i.test(window) && !/development|pending[^.]{0,40}QA/i.test(window)) {
         offenders.push(`${path.relative(publicDir, file)}: …${window.trim().slice(0, 160)}…`);
