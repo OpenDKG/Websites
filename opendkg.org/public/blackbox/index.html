@@ -6,14 +6,16 @@
   <title>Guardian Agent Blackbox — Third-party AI agent guard | OpenDKG</title>
   <meta name="description" content="Guardian Agent Blackbox is an open-source runtime guard for AI agents, built by Umanitek. It runs in audit mode by default; blocking is opt-in.">
   <link rel="canonical" href="https://opendkg.org/blackbox/">
-  <meta name="theme-color" content="#e8ebe4">
+  <meta name="theme-color" content="#111317">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="OpenDKG">
   <meta property="og:title" content="Guardian Agent Blackbox — Third-party AI agent guard">
   <meta property="og:description" content="An open-source runtime guard for AI agents, built by Umanitek. Audit by default; blocking is opt-in.">
   <meta property="og:url" content="https://opendkg.org/blackbox/">
   <meta name="twitter:card" content="summary">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-opendkg.png" type="image/png" sizes="64x64">
+  <link rel="stylesheet" href="/home.css">
+  <link rel="stylesheet" href="/assets/nav-donate.css">
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/assets/privacy-notice.css">
   <script src="/assets/privacy-notice.js" defer></script>
@@ -22,17 +24,15 @@
   <a class="skip" href="#main">Skip to content</a>
 
   <header class="site-header">
-    <div class="wrap header-inner">
+    <div class="shell nav-bar">
       <a class="brand" href="/" aria-label="OpenDKG home">
-        <img src="/assets/opendkg-icon.svg" alt="" width="32" height="32">
-        <span>OpenDKG</span>
+        <img class="brand-logo" src="/assets/opendkg-logo.png" alt="" width="89" height="60">
       </a>
-      <nav aria-label="Primary">
-        <a href="/axiom/">Axiom</a>
-        <a href="/blackbox/" aria-current="page">Blackbox</a>
-        <a href="/DKGSwarm/">DKGSwarm</a>
-        <a href="/tracabot/">TRACaBot</a>
-        <a href="/transparency/">Transparency</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/#projects">Projects</a>
+        <a href="/apps/">Apps</a>
+        <a href="/#open-source">Open source</a>
+        <a class="nav-donate" href="/donate/"><img src="/assets/ethereum.png" alt="" width="9" height="15">Donate</a>
         <a class="nav-github" href="https://github.com/OpenDKG" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
       </nav>
     </div>
@@ -40,8 +40,8 @@
 
   <main id="main">
     <section class="page-hero">
-      <div class="wrap">
-        <p class="eyebrow">Third-party · Built by Umanitek</p>
+      <div class="shell">
+        <p class="eyebrow"><span class="eyebrow-marker"></span>Third-party · Built by Umanitek</p>
         <h1>Guardian Agent Blackbox, by Umanitek.</h1>
         <p class="lede">An open-source runtime guard for AI agents. It watches what an agent is about to do, flags risky actions, and can block confirmed threats when you turn that on.</p>
         <p class="product-meta"><span class="status status--third">Third-party · Live</span> Umanitek · MIT · Open source</p>
@@ -53,9 +53,9 @@
     </section>
 
     <section class="section" aria-labelledby="package-title">
-      <div class="wrap split">
+      <div class="shell split">
         <div>
-          <p class="eyebrow">Part of the Axiom package</p>
+          <p class="eyebrow"><span class="eyebrow-marker"></span>Part of the Axiom package</p>
           <h2 id="package-title">A separate guardrail, with a separate author.</h2>
           <p>Guardian Agent Blackbox is included in the Axiom package as the optional agent guardrail. It is built and maintained by Umanitek, not by OpenDKG.</p>
           <p>That distinction matters. Blackbox has its own repository, license, documentation, release process, and limits. Axiom’s firewall work is separate from Blackbox’s runtime checks.</p>
@@ -70,9 +70,9 @@
     </section>
 
     <section class="section section--soft" aria-labelledby="watches-title">
-      <div class="wrap">
+      <div class="shell">
         <div class="section-head">
-          <p class="eyebrow">What it watches</p>
+          <p class="eyebrow"><span class="eyebrow-marker"></span>What it watches</p>
           <div>
             <h2 id="watches-title">Six categories of risk, described by Umanitek.</h2>
             <p class="lede">These are the vendor’s descriptions, not an independent OpenDKG audit. Read Umanitek’s documentation for the current rule set and coverage.</p>
@@ -108,9 +108,9 @@
     </section>
 
     <section class="section" aria-labelledby="mode-title">
-      <div class="wrap split">
+      <div class="shell split">
         <div>
-          <p class="eyebrow">How it responds</p>
+          <p class="eyebrow"><span class="eyebrow-marker"></span>How it responds</p>
           <h2 id="mode-title">Audit first. Blocking is opt-in.</h2>
           <p>Blackbox runs in audit mode by default. It records findings and shows them in a local dashboard; it does not stop the agent unless you enable block mode.</p>
           <p>In block mode, a block requires the configured severity threshold and a trusted source. Community and heuristic findings are flag-only. The project documents these boundaries in its own README.</p>
@@ -125,9 +125,9 @@
     </section>
 
     <section class="section section--soft" aria-labelledby="requirements-title">
-      <div class="wrap split">
+      <div class="shell split">
         <div>
-          <p class="eyebrow">What you need</p>
+          <p class="eyebrow"><span class="eyebrow-marker"></span>What you need</p>
           <h2 id="requirements-title">A host, a guard, and a local node.</h2>
           <p>Umanitek documents Hermes as the host that works out of the box; OpenClaw workspaces use a bundled bridge. The guard uses a local DKG node for its threat graphs.</p>
           <p>Installation and configuration belong to Umanitek’s project. This page does not reproduce those steps, and it does not claim that every agent host is supported.</p>
@@ -142,7 +142,7 @@
     </section>
 
     <section class="section" aria-labelledby="blackbox-next-title">
-      <div class="wrap">
+      <div class="shell">
         <div class="cta-band">
           <h2 id="blackbox-next-title">Start with the official documentation.</h2>
           <p>Umanitek publishes the current install steps, requirements, rule behavior, and privacy details. Read them before you rely on the guard.</p>
@@ -156,17 +156,24 @@
   </main>
 
   <footer class="site-footer">
-    <div class="wrap footer-grid">
-      <div>
-        <p class="footer-brand">OpenDKG</p>
-        <p>Independent open-source software for privacy, security, and interoperable infrastructure. A third-party integration does not imply affiliation or endorsement.</p>
+    <div class="shell footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="/" aria-label="OpenDKG home">
+          <img class="brand-logo" src="/assets/opendkg-logo.png" alt="" width="89" height="60">
+        </a>
+        <p>An independent initiative whose work includes open-source software for privacy, security and everyday use.</p>
       </div>
       <nav class="footer-links" aria-label="Footer">
+        <a href="/">Home</a>
+        <a href="/apps/">Apps</a>
         <a href="/axiom/">Axiom</a>
-        <a href="/blackbox/">Blackbox</a>
-        <a href="/DKGSwarm/">DKGSwarm</a>
-        <a href="/tracabot/">TRACaBot</a>
+        <a href="/desktop/">OpenDKG Desktop</a>
+        <a href="/graph/">DKG Graph Local</a>
+        <a href="/veritytrail/">VerityTrail</a>
+        <a href="https://dkgswarm.com/" rel="noopener">DKG Swarm</a>
+        <a href="https://tracabot.com/" rel="noopener">TRACaBot</a>
         <a href="/transparency/">Transparency</a>
+        <a href="/donate/">Donate</a>
         <a href="/privacy/">Privacy</a>
         <a href="https://github.com/OpenDKG" rel="noopener">GitHub</a>
       </nav>

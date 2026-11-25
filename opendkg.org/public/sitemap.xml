@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://opendkg.org/</loc><lastmod>2026-11-14</lastmod></url>
+  <url><loc>https://opendkg.org/</loc><lastmod>2026-11-25</lastmod></url>
   <url><loc>https://opendkg.org/apps/</loc><lastmod>2026-11-25</lastmod></url>
-  <url><loc>https://opendkg.org/donate/</loc><lastmod>2026-11-18</lastmod></url>
+  <url><loc>https://opendkg.org/donate/</loc><lastmod>2026-11-25</lastmod></url>
   <url><loc>https://opendkg.org/axiom/</loc><lastmod>2026-11-17</lastmod></url>
   <url><loc>https://opendkg.org/axiom/pentesting</loc><lastmod>2026-11-17</lastmod></url>
   <url><loc>https://opendkg.org/desktop/</loc><lastmod>2026-11-25</lastmod></url>
   <url><loc>https://opendkg.org/graph/</loc><lastmod>2026-11-25</lastmod></url>
   <url><loc>https://opendkg.org/veritytrail/</loc><lastmod>2026-11-25</lastmod></url>
-  <url><loc>https://opendkg.org/blackbox/</loc><lastmod>2026-11-14</lastmod></url>
-  <url><loc>https://opendkg.org/DKGSwarm/</loc><lastmod>2026-11-14</lastmod></url>
-  <url><loc>https://opendkg.org/tracabot/</loc><lastmod>2026-11-14</lastmod></url>
-  <url><loc>https://opendkg.org/transparency/</loc><lastmod>2026-11-14</lastmod></url>
-  <url><loc>https://opendkg.org/privacy/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://opendkg.org/blackbox/</loc><lastmod>2026-11-25</lastmod></url>
+  <url><loc>https://opendkg.org/DKGSwarm/</loc><lastmod>2026-11-25</lastmod></url>
+  <url><loc>https://opendkg.org/tracabot/</loc><lastmod>2026-11-25</lastmod></url>
+  <url><loc>https://opendkg.org/transparency/</loc><lastmod>2026-11-25</lastmod></url>
+  <url><loc>https://opendkg.org/privacy/</loc><lastmod>2026-11-25</lastmod></url>
 </urlset>
