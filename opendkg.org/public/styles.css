@@ -117,6 +117,14 @@ main > .page-hero + .section {
   max-width: 74ch;
 }
 
+.shell.prose {
+  max-width: var(--shell, 1160px);
+}
+
+.shell.prose > * {
+  max-width: 74ch;
+}
+
 .prose h2 {
   margin: 44px 0 14px;
   font-size: clamp(22px, 2.4vw, 28px);
