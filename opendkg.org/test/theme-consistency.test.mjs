@@ -40,3 +40,20 @@ test("dist/styles.css uses Graphite & Titanium dark palette with no legacy light
     assert.ok(!styles.includes(legacyColor), `dist/styles.css still contains legacy color ${legacyColor}`);
   }
 });
+
+test("homepage includes How to contribute and GitHub membership application links", async () => {
+  const home = await readFile(path.join(distDir, "index.html"), "utf8");
+  assert.ok(home.includes("How to contribute"), "index.html missing How to contribute section");
+  assert.ok(
+    home.includes('href="https://github.com/OpenDKG/.github/blob/main/CONTRIBUTING.md"'),
+    "index.html missing CONTRIBUTING.md link",
+  );
+  assert.ok(
+    home.includes('href="https://github.com/OpenDKG/.github/blob/main/MEMBERSHIP.md"'),
+    "index.html missing MEMBERSHIP.md link",
+  );
+  assert.ok(
+    home.includes('href="https://github.com/OpenDKG/.github/issues/new?template=membership-agreement.yml"'),
+    "index.html missing membership application form link",
+  );
+});
