@@ -104,9 +104,23 @@ test("homepage and /apps/ directory list all project sites", () => {
   const homeHtml = readFileSync(path.join(distDir, "index.html"), "utf8");
   const appsHtml = readFileSync(path.join(distDir, "apps", "index.html"), "utf8");
   const appsCss = readFileSync(path.join(distDir, "apps", "apps.css"), "utf8");
+  const cardsCss = readFileSync(path.join(distDir, "assets", "home-cards.css"), "utf8");
 
   assert.ok(appsCss.length > 0, "apps.css should be non-empty");
+  assert.ok(cardsCss.includes(".platform-icon"), "home-cards.css missing .platform-icon");
+  assert.ok(homeHtml.includes('href="/assets/home-cards.css"'), "homepage missing home-cards.css");
+  assert.ok(appsHtml.includes('href="/assets/home-cards.css"'), "/apps/ missing home-cards.css");
   assert.ok(homeHtml.includes('href="/apps/"'), "homepage missing /apps/ link");
+
+  for (const [name, html] of [["index.html", homeHtml], ["apps/index.html", appsHtml]]) {
+    const iconMatches = [...html.matchAll(/<span class="platform-icon[^"]*"[^>]*>\s*<svg\b([^>]*)>/g)];
+    assert.ok(iconMatches.length >= 10, `${name} should contain platform-icon SVGs`);
+    for (const m of iconMatches) {
+      assert.match(m[1], /(?:^|\s)width="13"/, `${name} platform-icon SVG missing width="13"`);
+      assert.match(m[1], /(?:^|\s)height="13"/, `${name} platform-icon SVG missing height="13"`);
+    }
+  }
+
   for (const route of ["/axiom/", "/desktop/", "/graph/", "/veritytrail/"]) {
     assert.ok(homeHtml.includes(`href="${route}"`), `homepage missing ${route}`);
     assert.ok(appsHtml.includes(`href="${route}"`), `/apps/ missing ${route}`);

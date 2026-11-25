@@ -380,7 +380,7 @@ img, svg { max-width: 100%; }
 .card-platforms {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   flex: none;
   margin-left: auto;
 }
@@ -388,21 +388,26 @@ img, svg { max-width: 100%; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
-  border: 1px solid var(--border);
-  border-radius: 5px;
-  background: #14171c;
+  width: 20px;
+  height: 20px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: #7e8692;
+  transition: color .15s ease, background-color .15s ease;
+}
+.platform-icon:hover {
   color: var(--soft);
+  background: rgba(255, 255, 255, 0.05);
 }
 .platform-icon svg {
   width: 13px;
   height: 13px;
   display: block;
+  flex: none;
 }
 .platform-icon.os-planned {
-  opacity: .42;
-  border-style: dashed;
+  opacity: .34;
 }
 
 .not-found { padding-block: 96px 110px; }

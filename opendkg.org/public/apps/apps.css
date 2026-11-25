@@ -351,43 +351,42 @@
 .app-platforms {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 5px;
   flex: none;
+  margin-left: auto;
 }
 
 .platform-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  background: #13161b;
-  color: var(--soft);
-  transition: color .15s ease, border-color .15s ease;
+  width: 20px;
+  height: 20px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: #7e8692;
+  transition: color .15s ease, background-color .15s ease;
 }
 
 .platform-icon svg {
   display: block;
-  width: 15px;
-  height: 15px;
+  width: 13px;
+  height: 13px;
+  flex: none;
 }
 
 .platform-icon:hover {
-  color: var(--white);
-  border-color: var(--border-strong);
+  color: var(--soft);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .platform-icon.os-preview {
-  color: var(--muted);
-  border-style: dashed;
+  opacity: .72;
 }
 
 .platform-icon.os-planned {
-  color: #6b7280;
-  border-style: dotted;
-  opacity: .68;
+  opacity: .34;
 }
 
 @media (max-width: 860px) {
