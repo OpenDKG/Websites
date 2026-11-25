@@ -457,7 +457,8 @@ img, svg { max-width: 100%; }
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) auto;
+  grid-template-columns: minmax(220px, .8fr) minmax(0, 1.2fr);
+  align-items: start;
   gap: 26px 48px;
   padding-block: 42px 34px;
 }
@@ -471,6 +472,9 @@ img, svg { max-width: 100%; }
 .footer-links {
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: flex-end;
   gap: 12px 24px;
   padding-top: 4px;
 }
@@ -523,6 +527,7 @@ img, svg { max-width: 100%; }
   }
   .band-wrap { padding-bottom: 80px; }
   .footer-grid { grid-template-columns: 1fr; gap: 22px; }
+  .footer-links { justify-content: flex-start; }
 }
 
 @media (max-width: 640px) {

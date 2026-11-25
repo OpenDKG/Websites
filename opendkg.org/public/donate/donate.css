@@ -1,3 +1,8 @@
+.nav a[aria-current="page"],
+.footer-links a[aria-current="page"] {
+  color: var(--white);
+}
+
 .donate-page {
   max-width: 740px;
   padding-block: clamp(48px, 9vw, 112px);
