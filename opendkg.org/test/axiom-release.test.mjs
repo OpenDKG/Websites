@@ -119,3 +119,27 @@ test("transparency no longer claims the download arrives at launch", async () =>
   assert.doesNotMatch(html, /Launching/);
   assert.match(html, /Active development/);
 });
+
+test("Axiom/Windows builds are never called a current release without development or QA status", async () => {
+  const offenders = [];
+  for (const file of await textFiles(publicDir)) {
+    if (!file.endsWith(".html")) continue;
+    const text = (await readFile(file, "utf8")).replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
+    for (const match of text.matchAll(/current (?:release|installer|stable build)/gi)) {
+      const window = text.slice(Math.max(0, match.index - 200), match.index + 200);
+      if (/axiom|windows/i.test(window) && !/development|pending[^.]{0,40}QA/i.test(window)) {
+        offenders.push(`${path.relative(publicDir, file)}: …${window.trim().slice(0, 160)}…`);
+      }
+    }
+  }
+  assert.deepEqual(offenders, []);
+});
+
+test("Axiom platform lines carry preview or development status where the platforms are named", async () => {
+  const axiom = await read(PAGES.axiom);
+  const description = axiom.match(/<meta name="description" content="([^"]+)"/)?.[1] || "";
+  assert.match(description, /development|preview/i, "meta description must show development/preview status");
+  assert.doesNotMatch(axiom, /Control you can trust/i);
+  const apps = await read("apps/index.html");
+  assert.match(apps, /Not audited on any platform/);
+});

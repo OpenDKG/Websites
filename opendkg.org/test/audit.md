@@ -159,7 +159,7 @@ Evidence: `<evidence-root>/copy-2026-11-16/correction-2/final-tracabot/`.
 
 The site now deploys from this repository. Cloudflare Pages builds `main` and serves `public/`; the earlier local Nginx Proxy Manager host and its local deployment timer were retired and are not referenced by anything here.
 
-- `public/axiom/` replaced the placeholder with a squashed subtree of `OpenDKG/Axiom-Website` `main` at `bb298e4`, plus `canonical`, `og:url` and an absolute `og:image` for the `/axiom/` path on `index.html` and `pentesting.html`.
+- `public/axiom/` replaced the placeholder with a squashed subtree of the Axiom site's upstream source at `bb298e4`, plus `canonical`, `og:url` and an absolute `og:image` for the `/axiom/` path on `index.html` and `pentesting.html`.
 - `public/_headers` restores the previous response headers and CSP on the new host, with a separate policy for `/axiom/*` that allows its script, inline styles and self-hosted fonts.
 - `public/sitemap.xml` lists the published routes, including `/axiom/pentesting.html`.
 - `scripts/check-links.mjs` skips the vendored `public/axiom/` tree; that project keeps its own script, fonts and checks.
