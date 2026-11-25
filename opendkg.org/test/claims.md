@@ -82,6 +82,15 @@ Note, 2026-11-21: the 2026-11-16 "unreleased / no public download or application
 
 **Do not publish:** “stops all scams,” “automatically bans scammers,” “OpenDKG-owned,” or a link to the private development repository.
 
+## DKG Graph Local
+
+| Page | Claim | Basis | Status |
+| --- | --- | --- | --- |
+| `/graph/`, home, `/apps/` | Zero-gas neuro-symbolic knowledge vault powered by OriginTrail DKG v10.1.2 Working Memory, WASM Graph Computer, Privacy Split proof certificates, and loopback MCP `:3847` for 12 AI clients. | https://github.com/OpenDKG/DKG-Graph-Local (`README.md`, `docs/ARCHITECTURE.md`) | Public fact |
+| `/graph/`, home, `/apps/` | Native Rust auto-sync watched folders recursively monitor local directories and debounce `.md`, `.markdown`, `.txt`, `.pdf`, and `.docx` background re-indexing with persistent `watched-dirs.json`. | https://github.com/OpenDKG/DKG-Graph-Local (`apps/desktop/src-tauri/src/watcher.rs`, `README.md`) | Public fact |
+| `/graph/`, home, `/apps/` | Optional wallet keys are encrypted with AES-256-GCM using an OS Keychain / Windows Credential Manager master key (`keyring` + in-memory `k256` EIP-191 signing, with local keyfile fallback); private keys are never returned by GET endpoints or logged to Blackbox. | https://github.com/OpenDKG/DKG-Graph-Local (`apps/desktop/src-tauri/src/keychain.rs`, `packages/core-engine/src/dkg/walletStore.ts`, `README.md`) | Public fact |
+| `/graph/` | `v0.5.0-pre` (`GPL-3.0-or-later`), Windows x64 tested with Tauri 2 desktop shell and native dark/light titlebar sync; macOS and Linux desktop packages planned for `v1.0.0`. | https://github.com/OpenDKG/DKG-Graph-Local (`README.md`, Platform Support roadmap) | Public fact |
+
 ## Excluded projects
 
 RepNet and TracaPlot are not presented as launched products. RepNet has no verified public repository, license, or implementation state. TracaPlot is not in the public portfolio.
