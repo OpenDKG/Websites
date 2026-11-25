@@ -2,23 +2,25 @@
 
 Source for the public OpenDKG website, hosted in the `OpenDKG/Websites` monorepo under `opendkg.org/`. This is a static HTML/CSS site with no runtime dependencies and no JavaScript.
 
-**Deployment:** Cloudflare Pages builds `OpenDKG/Websites` from `main` by running `node scripts/build.mjs` from the repository root and serving `dist/`. The build script copies `opendkg.org/public/` into `dist/` and copies `../axiom/` into `dist/axiom/` (excluding Axiom repository housekeeping files). A push to `main` is a production change. Do not create a manual `opendkg.org/public/axiom/` directory — edit `../axiom/` directly.
+**Deployment:** Cloudflare Pages builds `OpenDKG/Websites` from `main` by running `node scripts/build.mjs` from the repository root and serving `dist/`. The build script copies `opendkg.org/public/` into `dist/` and copies `../axiom/`, `../Desktop/`, `../Graph/`, and `../VerityTrail/` into `dist/axiom/`, `dist/desktop/`, `dist/graph/`, and `dist/veritytrail/` (excluding repository housekeeping files). A push to `main` is a production change. Do not create manual `public/axiom/`, `public/desktop/`, `public/graph/`, or `public/veritytrail/` directories — edit the top-level project folders directly.
 
 ## What is here
 
 ```text
-public/                 Deployable site root (Cloudflare Pages output)
-  index.html            Home
+public/                 Deployable umbrella files (assembled with project sites into dist/)
+  index.html            Home (lists all 6 featured projects)
   home.css              Home and 404 styles
-  axiom/                Axiom site, synced from OpenDKG/Axiom-Website
-  blackbox/             Guardian Agent Blackbox (third-party)
+  apps/                 Free open-source software directory (/apps/)
+  blackbox/             Guardian Agent Blackbox (third-party summary)
   DKGSwarm/             DKGSwarm (exact-case route)
-  tracabot/             TRACaBot
+  donate/               Crypto donation page
+  privacy/              Privacy policy (no cookies or analytics)
+  tracabot/             TRACaBot summary
   transparency/         Ownership, status, sources, limits
   404.html              Custom not-found page
-  styles.css            Shared styles for the project pages
+  styles.css            Shared styles for the subpages
   _headers              Cloudflare Pages response headers and CSP
-  assets/               OpenDKG logo and icon
+  assets/               OpenDKG logo, icon, font, nav and privacy-notice assets
   favicon.svg, favicon-opendkg.png
   robots.txt
   sitemap.xml
@@ -26,21 +28,30 @@ scripts/
   check-links.mjs       Route, anchor, metadata, and sitemap checks
 test/
   check-links.test.mjs  Fixture tests for the checker
+  csp-headers.test.mjs  CSP and self-hosted font regression tests
+  axiom-release.test.mjs Axiom availability & claim boundary tests
+  project-sites.test.mjs Build, link, CSP & asset checks for /apps/, /desktop/, /graph/, /veritytrail/
   claims.md             Claim-to-source review checklist
   audit.md              Review results and limitations
 ```
 
 ## Routes
 
-| Route | File |
+| Route | Source |
 | --- | --- |
-| `/` | `public/index.html` |
-| `/axiom/` | `public/axiom/index.html` |
-| `/DKGSwarm/` | `public/DKGSwarm/index.html` |
-| `/blackbox/` | `public/blackbox/index.html` |
-| `/tracabot/` | `public/tracabot/index.html` |
-| `/transparency/` | `public/transparency/index.html` |
-| `/404.html` | `public/404.html` |
+| `/` | `opendkg.org/public/index.html` |
+| `/apps/` | `opendkg.org/public/apps/index.html` |
+| `/axiom/` | `axiom/index.html` (via `scripts/build.mjs`) |
+| `/desktop/` | `Desktop/index.html` (via `scripts/build.mjs`) |
+| `/graph/` | `Graph/index.html` (via `scripts/build.mjs`) |
+| `/veritytrail/` | `VerityTrail/index.html` (via `scripts/build.mjs`) |
+| `/DKGSwarm/` | `opendkg.org/public/DKGSwarm/index.html` |
+| `/blackbox/` | `opendkg.org/public/blackbox/index.html` |
+| `/tracabot/` | `opendkg.org/public/tracabot/index.html` |
+| `/transparency/` | `opendkg.org/public/transparency/index.html` |
+| `/donate/` | `opendkg.org/public/donate/index.html` |
+| `/privacy/` | `opendkg.org/public/privacy/index.html` |
+| `/404.html` | `opendkg.org/public/404.html` |
 
 `DKGSwarm` is intentionally capitalized. Directory routes use a trailing slash in links and canonicals so the canonical URL matches the file served by a static server. The production server may redirect `/axiom` to `/axiom/`; verify that behavior when deploying.
 
@@ -77,7 +88,7 @@ The checker validates:
 - titles, descriptions, and canonicals are unique;
 - every non-404 page appears in `sitemap.xml`.
 
-`dist/axiom/` is skipped: it is a separate project site with its own script and fonts.
+`dist/axiom/`, `dist/desktop/`, `dist/graph/`, and `dist/veritytrail/` are skipped: they are standalone project sites with their own scripts, theme CSS, and fonts, and are validated by `opendkg.org/test/project-sites.test.mjs`.
 
 External links are listed but not fetched by default. To spot-check them:
 
@@ -102,14 +113,14 @@ Cloudflare Pages builds `main` of `OpenDKG/Websites` with `node scripts/build.mj
 
 `public/_headers` holds the response headers:
 
-- `/*` sends `nosniff`, `DENY`, `strict-origin-when-cross-origin`, and the site CSP: no scripts, and styles, fonts, and images from this origin only.
-- `/axiom/*` replaces the CSP with the Axiom policy, which allows the Axiom site's script, inline styles, self-hosted fonts, and `youtube-nocookie.com` embeds.
+- `/*` and `/donate/*` send `nosniff`, `DENY`, `strict-origin-when-cross-origin`, and the site CSP: no scripts, and styles, fonts, and images from this origin only.
+- `/axiom/*`, `/desktop/*`, `/graph/*`, and `/veritytrail/*` apply the project-site CSP, which allows their self-hosted scripts, inline styles, and self-hosted fonts (plus `youtube-nocookie.com` embeds on `/axiom/*`).
 
 A missing path serves `public/404.html` with HTTP 404. The `www` to apex redirect lives in Cloudflare, not in this repository.
 
-## Axiom integration
+## Project site integration
 
-The Axiom website lives in `../axiom/` in this monorepo and is assembled into `dist/axiom/` at build time by `scripts/build.mjs`. Keep `axiom/index.html` and `axiom/pentesting.html` canonicals, `og:url`, and absolute `og:image` paths pointing to `https://opendkg.org/axiom/`. The Axiom project keeps its own README and content rules; `opendkg.org/scripts/check-links.mjs` skips `axiom/`.
+The standalone project sites live in `../axiom/`, `../Desktop/`, `../Graph/`, and `../VerityTrail/` in this monorepo and are assembled into `dist/` at build time by `scripts/build.mjs`. Keep each site's canonical, `og:url`, and absolute `og:image` paths pointing to `https://opendkg.org/<slug>/`. Each project site keeps its own `README.md` and theme CSS; `opendkg.org/scripts/check-links.mjs` skips those four directories while `opendkg.org/test/project-sites.test.mjs` verifies their assets and CSP rules.
 
 ## Content rules
 
