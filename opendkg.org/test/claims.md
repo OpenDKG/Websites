@@ -87,10 +87,26 @@ Note, 2026-11-21: the 2026-11-16 "unreleased / no public download or application
 
 | Page | Claim | Basis | Status |
 | --- | --- | --- | --- |
-| `/graph/`, home, `/apps/` | Zero-gas neuro-symbolic knowledge vault powered by OriginTrail DKG v10.1.2 Working Memory, WASM Graph Computer, Privacy Split proof certificates, and loopback MCP `:3847` for 12 AI clients. | https://github.com/OpenDKG/DKG-Graph-Local (`README.md`, `docs/ARCHITECTURE.md`) | Public fact |
-| `/graph/`, home, `/apps/` | Native Rust auto-sync watched folders recursively monitor local directories and debounce `.md`, `.markdown`, `.txt`, `.pdf`, and `.docx` background re-indexing with persistent `watched-dirs.json`. | https://github.com/OpenDKG/DKG-Graph-Local (`apps/desktop/src-tauri/src/watcher.rs`, `README.md`) | Public fact |
-| `/graph/`, home, `/apps/` | Optional wallet keys are encrypted with AES-256-GCM using an OS Keychain / Windows Credential Manager master key (`keyring` + in-memory `k256` EIP-191 signing, with local keyfile fallback); private keys are never returned by GET endpoints or logged to Blackbox. | https://github.com/OpenDKG/DKG-Graph-Local (`apps/desktop/src-tauri/src/keychain.rs`, `packages/core-engine/src/dkg/walletStore.ts`, `README.md`) | Public fact |
-| `/graph/` | `v0.5.0-pre` (`GPL-3.0-or-later`), Windows x64 tested with Tauri 2 desktop shell and native dark/light titlebar sync; macOS and Linux desktop packages planned for `v1.0.0`. | https://github.com/OpenDKG/DKG-Graph-Local (`README.md`, Platform Support roadmap) | Public fact |
+| `/graph/`, home, `/apps/` | Zero-gas neuro-symbolic knowledge vault powered by OriginTrail DKG v10.1.2 Working Memory, WASM Graph Computer, Privacy Split proof certificates, and loopback MCP `:3847` for 12 AI clients. | Project documentation; source not public yet | Source pending — not independently verifiable |
+| `/graph/`, home, `/apps/` | Native Rust auto-sync watched folders recursively monitor local directories and debounce `.md`, `.markdown`, `.txt`, `.pdf`, and `.docx` background re-indexing with persistent `watched-dirs.json`. | Project documentation; source not public yet | Source pending — not independently verifiable |
+| `/graph/`, home, `/apps/` | Optional wallet keys are encrypted with AES-256-GCM using an OS Keychain / Windows Credential Manager master key (`keyring` + in-memory `k256` EIP-191 signing, with local keyfile fallback); private keys are never returned by GET endpoints or logged to Blackbox. | Project documentation; source not public yet | Source pending — not independently verifiable |
+| `/graph/` | `v0.5.0-pre` (`GPL-3.0-or-later`), Windows x64 tested with Tauri 2 desktop shell and native dark/light titlebar sync; macOS and Linux desktop packages planned for `v1.0.0`. | Project documentation; source not public yet | Source pending — not independently verifiable |
+
+| `/graph/` (2026-11-25) | "Local-only by default on 127.0.0.1"; the optional DKG bridge sends the assets you choose off-device. No "100% private" claim. | Product behaviour: optional DKG bridge | Qualified privacy claim, test-enforced |
+| `/graph/`, `/apps/` (2026-11-25) | Licensed GPL-3.0-or-later; source to be published; badge "Source pending". | Transparency label "Source pending" | Status label matches definition, test-enforced |
+
+## OpenDKG Desktop
+
+| Page | Claim | Basis | Status |
+| --- | --- | --- | --- |
+| `/desktop/`, `/apps/` (2026-11-25) | `v0.5.0` in active development; licensed GPL-3.0; source to be published; badge "Source pending". | Transparency label "Source pending" | Status label matches definition, test-enforced |
+| `/desktop/` (2026-11-25) | Windows build not public yet; macOS and Linux packages are planned. The header CTA is "Release status", not a download. | No downloadable build is published | Availability claim withdrawn, test-enforced |
+
+## VerityTrail
+
+| Page | Claim | Basis | Status |
+| --- | --- | --- | --- |
+| `/veritytrail/`, `/apps/` (2026-11-25) | Release Candidate `0.1.0` for Windows x64; source and builds not public yet; badge "Source pending". No test-count figure is published until a public CI run or report can be linked. | Transparency label "Source pending" | Unverifiable metric removed, test-enforced |
 
 ## Excluded projects
 

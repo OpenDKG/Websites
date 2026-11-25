@@ -34,8 +34,11 @@ export function collectIds(html) {
   return ids;
 }
 
-// Vendored project sites keep their own conventions and their own checks.
-const vendored = new Set(["axiom", "desktop", "graph", "veritytrail"]);
+// Project sites keep their own markup conventions (scripts, inline styles, no
+// skip link), so only those umbrella conventions are skipped for them; links,
+// anchors, metadata and the sitemap are checked everywhere.
+const projectTrees = new Set(["axiom", "desktop", "graph", "veritytrail"]);
+const inProjectTree = (rel = "") => projectTrees.has(rel.split(/[\\/]/)[0]);
 
 async function walkHtml(dir, root = dir) {
   const out = [];
@@ -43,8 +46,6 @@ async function walkHtml(dir, root = dir) {
   for (const entry of entries) {
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) {
-      const rel = path.relative(root, full).split(path.sep).join("/");
-      if (vendored.has(rel)) continue;
       out.push(...(await walkHtml(full, root)));
     } else if (entry.isFile() && entry.name.endsWith(".html")) out.push(full);
   }
@@ -124,15 +125,18 @@ function pageBasics(html, rel = "") {
   const h1Count = (html.match(/<h1\b/gi) || []).length;
   if (h1Count !== 1) errors.push(`expected one h1, found ${h1Count}`);
   if (!/<main[^>]*\sid="main"/i.test(html)) errors.push('missing <main id="main">');
-  if (!/class="skip"/i.test(html)) errors.push("missing skip link");
+  const projectPage = inProjectTree(rel);
+  if (!projectPage && !/class="skip"/i.test(html)) errors.push("missing skip link");
   let scriptCheckedHtml = html.replace('<script src="/assets/privacy-notice.js" defer></script>', '');
   if (rel.split(path.sep).join("/") === "donate/index.html") {
     scriptCheckedHtml = scriptCheckedHtml.replace('<script src="/donate/donate.js" defer></script>', '');
   }
-  if (/<script\b/i.test(scriptCheckedHtml)) errors.push("contains a script element");
-  if (/\sstyle="/i.test(html)) errors.push("contains an inline style attribute");
+  if (!projectPage && /<script\b/i.test(scriptCheckedHtml)) errors.push("contains a script element");
+  if (!projectPage && /\sstyle="/i.test(html)) errors.push("contains an inline style attribute");
   if (/href="#"/i.test(html)) errors.push('contains a dead href="#"');
-  if (/http:\/\//i.test(html)) errors.push("contains an insecure http:// link");
+  if (/href="http:\/\//i.test(html) || (!projectPage && /http:\/\//i.test(html))) {
+    errors.push("contains an insecure http:// link");
+  }
   if (/TODO|FIXME/i.test(html)) errors.push("contains TODO/FIXME");
   return errors;
 }
@@ -215,7 +219,7 @@ export async function checkSite(root = "public", { external = false } = {}) {
       .map((file) => {
         const rel = path.relative(root, file).replace(/\\/g, "/");
         if (rel === "index.html") return "https://opendkg.org/";
-        return `https://opendkg.org/${rel.replace(/\/index\.html$/, "/")}`;
+        return `https://opendkg.org/${rel.replace(/\/index\.html$/, "/").replace(/\.html$/, "")}`;
       });
     for (const loc of expected) {
       if (!locs.includes(loc)) errors.push(`sitemap.xml: missing ${loc}`);

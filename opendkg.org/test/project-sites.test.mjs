@@ -126,3 +126,29 @@ test("homepage and /apps/ directory list all project sites", () => {
     assert.ok(appsHtml.includes(`href="${route}"`), `/apps/ missing ${route}`);
   }
 });
+
+const read = (rel) => readFileSync(path.join(distDir, rel), "utf8");
+const visibleText = (html) => html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
+
+test("project sites make no open-source, availability or metric claims they cannot back up", () => {
+  for (const slug of SITES) {
+    const text = visibleText(read(`${slug}/index.html`));
+    assert.doesNotMatch(text, /Built in the open/i, `${slug}: source is not public`);
+    assert.doesNotMatch(text, /\b\d+\/\d+ (?:automated )?tests passing/i, `${slug}: unlinked test metric`);
+    assert.doesNotMatch(text, /100% private/i, `${slug}: absolute privacy claim`);
+  }
+  const desktop = visibleText(read("desktop/index.html"));
+  assert.doesNotMatch(desktop, /Get Desktop/, "no download CTA without a downloadable build");
+  assert.match(desktop, /Planned · Apple Silicon/);
+  assert.match(desktop, /Planned · x64 · AppImage/);
+  assert.match(visibleText(read("graph/index.html")), /optional DKG bridge, the assets you choose to bridge leave your device/);
+});
+
+test("Desktop, Graph and VerityTrail use a status label whose definition matches non-public source", () => {
+  const transparency = visibleText(read("transparency/index.html"));
+  assert.match(transparency, /Source pending In active development; source and builds are not public yet/);
+  const apps = read("apps/index.html");
+  for (const badge of ["v0.5.0 · Source pending", "v0.5.0-pre · Source pending", "RC 0.1.0 · Source pending"]) {
+    assert.ok(apps.includes(badge), `missing badge ${badge}`);
+  }
+});
