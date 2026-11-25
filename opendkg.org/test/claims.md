@@ -108,3 +108,16 @@ Each hit needs a documented reason or removal. “No partnership” and “not o
 ## Axiom site (vendored)
 
 `public/axiom/` is synced automatically from https://github.com/OpenDKG/Axiom-Website `main` by `opendkg-sync[bot]` (`rsync --delete`), most recently at `1f0ff20` (2026-11-21). Axiom product, platform, evidence and download claims are maintained and reviewed in that repository. The 2026-11-21 `#download`/`#platforms` release-availability copy is applied upstream there and arrives here through the sync. The only downstream-local changes remain `canonical`, `og:url` and an absolute `og:image` for the `/axiom/` path. Do not edit `public/axiom/` directly without mirroring the change upstream first.
+
+
+## Homepage roadmap preview (MKT-003)
+
+| Page | Claim | Basis | Status |
+| --- | --- | --- | --- |
+| Home `#roadmap` | Three milestone phases (Now / Next / Later) summarise public project status only; no release dates are promised. | Public status labels on `/`, `/apps/`, `/axiom/`, `/desktop/`, `/graph/`, `/veritytrail/`, `dkgswarm.com`, `tracabot.com` | Public fact + editorial boundary |
+| Home `#roadmap` | Axiom is an active-development release; clean-machine QA has not closed and nothing is labelled stable or QA-cleared. | `OpenDKG/Axiom` release metadata; OPS-001 QA gate status (still open); public `README.md` limits | Public fact; owner-approved gate |
+| Home `#roadmap` | DKG Graph Local macOS and Linux desktop packages are planned for `v1.0.0`; Windows x64 is the tested build today. | https://github.com/OpenDKG/DKG-Graph-Local (`README.md`, Platform Support roadmap) | Public fact |
+| Home `#roadmap` | VerityTrail is an RC `0.1.0` in active development; release-candidate hardening precedes a stable build. | `/veritytrail/` public status label | Public site copy |
+| Home `#roadmap` | Later items are direction only, not a promise or schedule. | Editorial boundary | Editorial boundary |
+
+**Do not publish without a new approval:** a dated roadmap, a roadmap item described as shipped, any claim that Axiom has passed QA, or any private, unannounced product name in a milestone.
