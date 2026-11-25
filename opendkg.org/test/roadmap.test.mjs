@@ -62,6 +62,22 @@ test("roadmap copy does not promote an unverified Axiom build", () => {
   assert.match(html, /not completed clean-machine QA/i, "roadmap should state the open QA gate");
 });
 
+test("Now phase does not claim active-development projects are usable today", () => {
+  const html = read("index.html");
+  const now = html.match(/<article class="phase phase-now"[\s\S]*?<\/article>/);
+  assert.ok(now, "missing Now phase card");
+  for (const route of ["/desktop/", "/graph/", "/veritytrail/"]) {
+    assert.ok(!now[0].includes(`href="${route}"`), `Now phase must not list ${route} as usable today`);
+  }
+  assert.doesNotMatch(html, /Public and usable today/, "overclaim copy is still present");
+  const next = html.match(/<article class="phase phase-next"[\s\S]*?<\/article>/);
+  assert.ok(next, "missing Next phase card");
+  for (const route of ["/desktop/", "/graph/", "/veritytrail/"]) {
+    assert.ok(next[0].includes(`href="${route}"`), `Next phase missing ${route} development status`);
+  }
+  assert.match(next[0], /Active development/, "Next phase should label these projects as active development");
+});
+
 test("umbrella pages share the same primary nav and footer", () => {
   const pages = UMBRELLA_PAGES.map((rel) => [rel, read(rel)]);
   const [baseRel, baseHtml] = pages[0];
