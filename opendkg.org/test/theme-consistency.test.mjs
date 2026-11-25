@@ -31,6 +31,21 @@ test("all non-vendored umbrella pages share the Graphite & Titanium dark theme a
     assert.ok(html.includes('class="site-footer"'), `${rel} missing site-footer`);
     assert.ok(!html.includes("#e8ebe4"), `${rel} still references legacy light theme color #e8ebe4`);
   }
+
+  for (const rel of [
+    "transparency/index.html",
+    "privacy/index.html",
+    "DKGSwarm/index.html",
+    "blackbox/index.html",
+    "tracabot/index.html",
+  ]) {
+    const html = await readFile(path.join(distDir, rel), "utf8");
+    assert.ok(
+      html.includes('href="/assets/subpages-dark.css"'),
+      `${rel} missing cache-safe /assets/subpages-dark.css`,
+    );
+    assert.ok(!html.includes('href="/styles.css"'), `${rel} still references cacheable /styles.css`);
+  }
 });
 
 test("dist/styles.css uses Graphite & Titanium dark palette with no legacy light colors", async () => {
