@@ -47,18 +47,19 @@
 
     <section class="section">
       <div class="shell prose">
-        <p><strong>Effective date:</strong> 2026-11-22</p>
+        <p><strong>Effective date:</strong> 2026-11-25</p>
 
         <h2>1. Scope and controller</h2>
-        <p>This Privacy Policy applies to the public websites <strong>opendkg.org</strong> and <strong>opendkg.org/axiom/</strong>, as well as the <strong>Axiom</strong> desktop application (Windows, Linux, and macOS), published by the independent OpenDKG open-source initiative (<a href="mailto:contact@opendkg.org">contact@opendkg.org</a>).</p>
+        <p>This Privacy Policy applies to the public website <strong>opendkg.org</strong> and every project site served under it — <strong>/axiom/</strong>, <strong>/desktop/</strong>, <strong>/graph/</strong> and <strong>/veritytrail/</strong> — and to the <strong>Axiom</strong> desktop application (Windows, Linux, and macOS), published by the independent OpenDKG open-source initiative (<a href="mailto:contact@opendkg.org">contact@opendkg.org</a>). Sections 5–7 describe the data flows of the <strong>OpenDKG Desktop</strong>, <strong>DKG Graph Local</strong> and <strong>VerityTrail</strong> applications, which are in development and not yet publicly released.</p>
         <p>Independent third-party services or optional integrations—including Umanitek Blackbox, OriginTrail / DKG nodes, Cloudflare, GitHub, YouTube, VirusTotal, and external DNS or AI providers you configure—are operated separately under their own privacy policies and terms.</p>
 
-        <h2>2. Websites (opendkg.org and opendkg.org/axiom/)</h2>
+        <h2>2. Websites (opendkg.org and all project sites under it)</h2>
         <ul>
           <li><strong>No cookies or analytics:</strong> Our websites do not set tracking cookies, advertising identifiers, or behavioral analytics scripts.</li>
           <li><strong>Hosting and security logs:</strong> The sites are served as static pages via <strong>Cloudflare Pages</strong>, which processes standard HTTP request metadata (such as IP address, timestamp, requested URL, and user-agent) solely to deliver pages and protect against abuse and DDoS attacks.</li>
           <li><strong>Embedded video previews:</strong> On <code>/axiom/</code>, embedded videos use click-to-load thumbnails hosted locally. No connection is made to YouTube (<code>youtube-nocookie.com</code>) unless you click Play.</li>
           <li><strong>External links:</strong> Links to GitHub, DKG Swarm, TRACaBot, and third-party sites leave our pages; those destinations are governed by their own policies.</li>
+          <li><strong>Privacy-notice preference (browser local storage):</strong> When you dismiss the privacy notice, the sites store <code>opendkg_privacy_notice_v1</code> = <code>1</code> in your browser's <code>localStorage</code> so the notice stays dismissed. It contains no identifier, is never sent to us, and you can remove it by clearing site data for opendkg.org in your browser.</li>
         </ul>
 
         <h2>3. Axiom desktop application</h2>
@@ -82,10 +83,32 @@
           </li>
         </ul>
 
-        <h2>5. Contact emails</h2>
+        <h2>5. OpenDKG Desktop application</h2>
+        <ul>
+          <li><strong>Local by default:</strong> The AI gateway listens only on <code>127.0.0.1</code>. Agent memory, usage records and settings stay on your machine; API keys you add are kept in your operating system's keychain.</li>
+          <li><strong>Cloud model routing (your choice):</strong> In the <em>Private Local</em> policy nothing leaves your PC. If you add your own provider keys or choose <em>Smart Saver</em> or <em>Verified Cloud</em> routing, the prompts sent through that route go to the AI provider you selected, under that provider's terms. Secret redaction runs before cloud calls.</li>
+          <li><strong>Marketplace sharing (off by default):</strong> If you enable marketplace publishing or provider mode, the local models you choose to expose can be called by marketplace buyers; their requests and your responses pass through the marketplace network. Withdrawing stops new sharing.</li>
+          <li><strong>Wallet and on-chain records:</strong> Wallet transfers and any DKG or blockchain anchors you commit are public and immutable once committed; they cannot be deleted later.</li>
+        </ul>
+
+        <h2>6. DKG Graph Local application</h2>
+        <ul>
+          <li><strong>Local by default:</strong> Your documents, the knowledge vault, Working Memory and the MCP endpoint stay on your machine (<code>127.0.0.1</code>). Local AI uses a loopback runtime such as Ollama unless you explicitly allow a remote endpoint.</li>
+          <li><strong>Optional DKG bridge and publishing:</strong> Only the assets you choose to bridge or publish leave your device. Published Knowledge Assets on OriginTrail DKG networks are public and, once anchored on-chain, immutable.</li>
+          <li><strong>AI clients you connect:</strong> AI assistants you connect over MCP can read the vault content their tools return; what they do with it is governed by those clients' own terms.</li>
+        </ul>
+
+        <h2>7. VerityTrail application</h2>
+        <ul>
+          <li><strong>Local by default:</strong> Scans, SBOMs, findings and reports stay on your machine.</li>
+          <li><strong>Cloud AI providers (opt-in):</strong> If you enable a cloud AI provider, the material you submit for an AI audit is sent to that provider under its terms; local servers and CLI harnesses keep the data on your machine.</li>
+          <li><strong>Optional DKG Working Memory and Blackbox (off by default):</strong> When enabled, receipts are written only after raw code, file paths and secrets are blocked; the Blackbox reviewer guard is read-only.</li>
+        </ul>
+
+        <h2>8. Contact emails</h2>
         <p>If you email <a href="mailto:contact@opendkg.org">contact@opendkg.org</a>, we process your email address and message contents solely to read and respond to your inquiry, and we do not use it for marketing or share it with third parties unless legally required.</p>
 
-        <h2>6. Regional privacy disclosures (EU, Switzerland, and United States)</h2>
+        <h2>9. Regional privacy disclosures (EU, Switzerland, and United States)</h2>
 
         <h3>European Union &amp; EEA (GDPR)</h3>
         <ul>
@@ -105,10 +128,10 @@
           <li>California and other US state residents may contact <a href="mailto:contact@opendkg.org">contact@opendkg.org</a> to request access to or deletion of any email correspondence held by OpenDKG.</li>
         </ul>
 
-        <h2>7. Children</h2>
+        <h2>10. Children</h2>
         <p>Our websites and software are general-audience technical tools and are not directed to children under 13 (or under the applicable age of digital consent in the EU/EEA or Switzerland). We do not knowingly collect personal data from children.</p>
 
-        <h2>8. Changes and contact</h2>
+        <h2>11. Changes and contact</h2>
         <p>We may update this Privacy Policy as features evolve and will update the effective date above. For privacy questions or requests, email <a href="mailto:contact@opendkg.org">contact@opendkg.org</a>. For technical issues, please open a public issue at <a href="https://github.com/OpenDKG/Axiom/issues" rel="noopener">GitHub</a> without including personal data, credentials, or private paths.</p>
       </div>
     </section>

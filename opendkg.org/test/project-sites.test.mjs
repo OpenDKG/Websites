@@ -152,3 +152,30 @@ test("Desktop, Graph and VerityTrail use a status label whose definition matches
     assert.ok(apps.includes(badge), `missing badge ${badge}`);
   }
 });
+
+test("every page that links the privacy policy is inside the policy's stated scope", () => {
+  const privacy = read("privacy/index.html");
+  const scope = privacy.match(/<h2>1\. Scope and controller<\/h2>\s*<p>([\s\S]*?)<\/p>/)?.[1] || "";
+  const scopedTrees = new Set([...scope.matchAll(/<strong>\/([a-z0-9-]+)\/<\/strong>/gi)].map((m) => m[1].toLowerCase()));
+  const outside = [];
+  const walk = (dir) => {
+    for (const entry of readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) walk(full);
+      else if (entry.name.endsWith(".html")) {
+        const rel = path.relative(distDir, full).split(path.sep).join("/");
+        const html = readFileSync(full, "utf8");
+        if (!/href="(?:https:\/\/opendkg\.org)?\/privacy\/"/.test(html)) continue;
+        const top = rel.includes("/") ? rel.split("/")[0].toLowerCase() : "";
+        const projectTree = ["axiom", "desktop", "graph", "veritytrail"].includes(top);
+        if (projectTree && !scopedTrees.has(top)) outside.push(rel);
+      }
+    }
+  };
+  walk(distDir);
+  assert.deepEqual(outside, [], `pages link /privacy/ but are outside its scope: ${outside.join(", ")}`);
+  assert.match(privacy, /opendkg_privacy_notice_v1/, "localStorage flag must be disclosed");
+  for (const product of ["OpenDKG Desktop application", "DKG Graph Local application", "VerityTrail application"]) {
+    assert.ok(privacy.includes(product), `missing policy section: ${product}`);
+  }
+});
