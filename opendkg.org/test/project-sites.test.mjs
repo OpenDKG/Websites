@@ -144,6 +144,16 @@ test("project sites make no open-source, availability or metric claims they cann
   assert.match(visibleText(read("graph/index.html")), /optional DKG bridge, the assets you choose to bridge leave your device/);
 });
 
+test("project sites never call an unpublished build available or the source open", () => {
+  for (const slug of SITES) {
+    const text = visibleText(read(`${slug}/index.html`));
+    assert.doesNotMatch(text, /Windows x64 available|Available on Windows|Available in v\d/i, `${slug}: build is not public`);
+    assert.doesNotMatch(text, /Built for Windows · macOS · Linux|Windows, macOS & Linux ·/i, `${slug}: macOS/Linux are planned`);
+    assert.doesNotMatch(text, /open-source project|independent open-source/i, `${slug}: source is not public yet`);
+    assert.doesNotMatch(read(`${slug}/index.html`), />Open source</, `${slug}: nav label implies public source`);
+  }
+});
+
 test("Desktop, Graph and VerityTrail use a status label whose definition matches non-public source", () => {
   const transparency = visibleText(read("transparency/index.html"));
   assert.match(transparency, /Source pending In active development; source and builds are not public yet/);
