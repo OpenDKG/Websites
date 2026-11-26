@@ -78,6 +78,31 @@ test("Now phase does not claim active-development projects are usable today", ()
   assert.match(next[0], /Active development/, "Next phase should label these projects as active development");
 });
 
+test("roadmap release wording matches the project status wording", () => {
+  const roadmap = read("index.html").match(/<section class="roadmap shell"[\s\S]*?<\/section>/);
+  assert.ok(roadmap, "missing roadmap section");
+  const copy = roadmap[0];
+  for (const forbidden of [
+    /early build/i,
+    /no stable (public )?build is offered/i,
+    /installer and portable build are public/i,
+    /current (development )?(release|installer)/i,
+  ]) {
+    assert.doesNotMatch(copy, forbidden, `roadmap uses withdrawn availability wording: ${forbidden}`);
+  }
+  assert.match(copy, /Windows x64 is a development build pending clean-machine QA/);
+  assert.match(copy, /Windows x64 first \(build not public yet\)/);
+  assert.match(copy, /source and builds are not public yet/i);
+});
+
+test("roadmap does not label DKG Swarm or TRACaBot as live", () => {
+  const roadmap = read("index.html").match(/<section class="roadmap shell"[\s\S]*?<\/section>/);
+  assert.ok(roadmap, "missing roadmap section");
+  assert.match(roadmap[0], />DKG Swarm<\/a>/);
+  assert.match(roadmap[0], />TRACaBot<\/a>/);
+  assert.doesNotMatch(roadmap[0], /\blive\b/i);
+});
+
 test("umbrella pages share the same primary nav and footer", () => {
   const pages = UMBRELLA_PAGES.map((rel) => [rel, read(rel)]);
   const [baseRel, baseHtml] = pages[0];

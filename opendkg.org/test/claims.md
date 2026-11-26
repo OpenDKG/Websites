@@ -82,6 +82,20 @@ Note, 2026-11-21: the 2026-11-16 "unreleased / no public download or application
 
 **Do not publish:** “stops all scams,” “automatically bans scammers,” “OpenDKG-owned,” or a link to the private development repository.
 
+## Homepage roadmap preview
+
+| Page | Claim | Basis | Status |
+| --- | --- | --- | --- |
+| Home `#roadmap` | Three milestone phases (Now / Next / Later) summarise public project status only; no release dates are promised. | Public status labels on `/`, `/apps/`, `/axiom/`, `/desktop/`, `/graph/`, `/veritytrail/`, `dkgswarm.com`, `tracabot.com` | Public fact + editorial boundary |
+| Home `#roadmap` | Axiom is in active development. Windows x64 is a development build pending clean-machine QA; Ubuntu 24.04 amd64 and Intel macOS are previews; nothing is labelled stable or QA-cleared. | Project status: active development, clean-machine QA not completed | Public status |
+| Home `#roadmap` | DKG Swarm and TRACaBot are listed with a link and a short description, without a running-status label. | Their rows in the DKGSwarm and TRACaBot sections of this file cover the descriptions | Running status pending founder confirmation |
+| Home `#roadmap` | OpenDKG Desktop, DKG Graph Local and VerityTrail are in active development; their source and builds are not public yet. | Project status; no public source or downloadable build | Public status, test-enforced |
+| Home `#roadmap` | DKG Graph Local is Windows x64 first (build not public yet); macOS and Linux desktop packages are planned for `v1.0.0`. | Project documentation; source not public yet | Source pending — not independently verifiable |
+| Home `#roadmap` | VerityTrail release-candidate hardening is in progress. | Project documentation; source not public yet | Source pending — not independently verifiable |
+| Home `#roadmap` | Later items are direction only, not a promise or schedule. | Editorial boundary | Editorial boundary |
+
+**Do not publish without a new approval:** a dated roadmap, a roadmap item described as shipped, any claim that Axiom has passed QA, or any private, unannounced product name in a milestone.
+
 ## DKG Graph Local
 
 | Page | Claim | Basis | Status |
@@ -108,16 +122,3 @@ Each hit needs a documented reason or removal. “No partnership” and “not o
 ## Axiom site (vendored)
 
 `public/axiom/` is synced automatically from https://github.com/OpenDKG/Axiom-Website `main` by `opendkg-sync[bot]` (`rsync --delete`), most recently at `1f0ff20` (2026-11-21). Axiom product, platform, evidence and download claims are maintained and reviewed in that repository. The 2026-11-21 `#download`/`#platforms` release-availability copy is applied upstream there and arrives here through the sync. The only downstream-local changes remain `canonical`, `og:url` and an absolute `og:image` for the `/axiom/` path. Do not edit `public/axiom/` directly without mirroring the change upstream first.
-
-
-## Homepage roadmap preview
-
-| Page | Claim | Basis | Status |
-| --- | --- | --- | --- |
-| Home `#roadmap` | Three milestone phases (Now / Next / Later) summarise public project status only; no release dates are promised. | Public status labels on `/`, `/apps/`, `/axiom/`, `/desktop/`, `/graph/`, `/veritytrail/`, `dkgswarm.com`, `tracabot.com` | Public fact + editorial boundary |
-| Home `#roadmap` | Axiom is an active-development release; clean-machine QA has not closed and nothing is labelled stable or QA-cleared. | Public `OpenDKG/Axiom` release metadata and `README.md` limits; QA gate remains open per public status | Public fact; owner-approved gate |
-| Home `#roadmap` | DKG Graph Local is in active development; macOS and Linux desktop packages are planned for `v1.0.0`, and Windows x64 is an early build. | `/graph/` public status label (`v0.5.0-pre`; Windows x64 early build; macOS/Linux planned for `v1.0.0`) | Public site copy |
-| Home `#roadmap` | VerityTrail is an RC `0.1.0` in active development; release-candidate hardening precedes a stable build. | `/veritytrail/` public status label | Public site copy |
-| Home `#roadmap` | Later items are direction only, not a promise or schedule. | Editorial boundary | Editorial boundary |
-
-**Do not publish without a new approval:** a dated roadmap, a roadmap item described as shipped, any claim that Axiom has passed QA, or any private, unannounced product name in a milestone.
