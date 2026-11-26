@@ -31,6 +31,7 @@ Every product statement on the site should appear here with a basis. “Owner di
 | Axiom | Windows is the current platform. | https://wiki.dkgswarm.com/projects/axiom/overview | Public fact |
 | Axiom, home, transparency | Axiom is in active development with public builds and source; releases may be previews, and the project is not audited or production-ready. | https://github.com/OpenDKG/Axiom and https://github.com/OpenDKG/Axiom/releases/latest (checked 2026-11-21: `v1.4.8`, non-draft, non-prerelease) | Public repository + release metadata; owner direction 2026-11-21 supersedes the 2026-11-14 launch placeholder |
 | Axiom, home, Blackbox, transparency | The Axiom package includes Guardian Agent Blackbox as an optional agent guardrail. | Owner direction, 2026-11-14 | Owner-approved package direction; not an independent runtime test |
+| `/axiom/`, home, `/apps/` (2026-11-25) | Windows x64 is a development build pending clean-machine QA; macOS and Linux builds are previews; no build is audited. Wording such as "current release" or "current installer" is not used. | Project status: active development, clean-machine QA not completed; enforced by `axiom-release.test.mjs` | Public status, test-enforced |
 | Axiom | Axiom does not replace Windows security or guarantee protection. | Public project limits and vendor/owner boundary; no absolute claims permitted | Editorial boundary |
 | Axiom | Agent blocking is a separate layer and depends on Blackbox and the agent host. | https://wiki.dkgswarm.com/projects/axiom/overview and Blackbox vendor docs | Public fact + vendor description |
 | Home, Axiom, 2026-11-21 (supersedes 2026-11-16) | AI agent security; public builds in active development. Windows x64 installer and portable ZIP; Ubuntu 24.04 amd64 and Intel macOS previews (the macOS build is ad-hoc signed and its network extension needs separate activation); checksums in `SHA256SUMS.txt`; not audited or production-ready; firewall, DNS or agent-hook changes can interrupt connectivity or block tools. Source at https://github.com/OpenDKG/Axiom (`GPL-3.0-or-later`); downloads at https://github.com/OpenDKG/Axiom/releases/latest. | Release metadata and asset names checked 2026-11-21 via the public GitHub API; risk caveat quoted from the public repository README | Public repository + release fact; owner-approved 2026-11-21 |
@@ -86,10 +87,26 @@ Note, 2026-11-21: the 2026-11-16 "unreleased / no public download or application
 
 | Page | Claim | Basis | Status |
 | --- | --- | --- | --- |
-| `/graph/`, home, `/apps/` | Zero-gas neuro-symbolic knowledge vault powered by OriginTrail DKG v10.1.2 Working Memory, WASM Graph Computer, Privacy Split proof certificates, and loopback MCP `:3847` for 12 AI clients. | https://github.com/OpenDKG/DKG-Graph-Local (`README.md`, `docs/ARCHITECTURE.md`) | Public fact |
-| `/graph/`, home, `/apps/` | Native Rust auto-sync watched folders recursively monitor local directories and debounce `.md`, `.markdown`, `.txt`, `.pdf`, and `.docx` background re-indexing with persistent `watched-dirs.json`. | https://github.com/OpenDKG/DKG-Graph-Local (`apps/desktop/src-tauri/src/watcher.rs`, `README.md`) | Public fact |
-| `/graph/`, home, `/apps/` | Optional wallet keys are encrypted with AES-256-GCM using an OS Keychain / Windows Credential Manager master key (`keyring` + in-memory `k256` EIP-191 signing, with local keyfile fallback); private keys are never returned by GET endpoints or logged to Blackbox. | https://github.com/OpenDKG/DKG-Graph-Local (`apps/desktop/src-tauri/src/keychain.rs`, `packages/core-engine/src/dkg/walletStore.ts`, `README.md`) | Public fact |
-| `/graph/` | `v0.5.0-pre` (`GPL-3.0-or-later`), Windows x64 tested with Tauri 2 desktop shell and native dark/light titlebar sync; macOS and Linux desktop packages planned for `v1.0.0`. | https://github.com/OpenDKG/DKG-Graph-Local (`README.md`, Platform Support roadmap) | Public fact |
+| `/graph/`, home, `/apps/` | Zero-gas neuro-symbolic knowledge vault powered by OriginTrail DKG v10.1.2 Working Memory, WASM Graph Computer, Privacy Split proof certificates, and loopback MCP `:3847` for 12 AI clients. | Project documentation; source not public yet | Source pending — not independently verifiable |
+| `/graph/`, home, `/apps/` | Native Rust auto-sync watched folders recursively monitor local directories and debounce `.md`, `.markdown`, `.txt`, `.pdf`, and `.docx` background re-indexing with persistent `watched-dirs.json`. | Project documentation; source not public yet | Source pending — not independently verifiable |
+| `/graph/`, home, `/apps/` | Optional wallet keys are encrypted with AES-256-GCM using an OS Keychain / Windows Credential Manager master key (`keyring` + in-memory `k256` EIP-191 signing, with local keyfile fallback); private keys are never returned by GET endpoints or logged to Blackbox. | Project documentation; source not public yet | Source pending — not independently verifiable |
+| `/graph/` | `v0.5.0-pre` (`GPL-3.0-or-later`), Windows x64 tested with Tauri 2 desktop shell and native dark/light titlebar sync; macOS and Linux desktop packages planned for `v1.0.0`. | Project documentation; source not public yet | Source pending — not independently verifiable |
+
+| `/graph/` (2026-11-25) | "Local-only by default on 127.0.0.1"; the optional DKG bridge sends the assets you choose off-device. No "100% private" claim. | Product behaviour: optional DKG bridge | Qualified privacy claim, test-enforced |
+| `/graph/`, `/apps/` (2026-11-25) | Licensed GPL-3.0-or-later; source to be published; badge "Source pending". | Transparency label "Source pending" | Status label matches definition, test-enforced |
+
+## OpenDKG Desktop
+
+| Page | Claim | Basis | Status |
+| --- | --- | --- | --- |
+| `/desktop/`, `/apps/` (2026-11-25) | `v0.5.0` in active development; licensed GPL-3.0; source to be published; badge "Source pending". | Transparency label "Source pending" | Status label matches definition, test-enforced |
+| `/desktop/` (2026-11-25) | Windows build not public yet; macOS and Linux packages are planned. The header CTA is "Release status", not a download. | No downloadable build is published | Availability claim withdrawn, test-enforced |
+
+## VerityTrail
+
+| Page | Claim | Basis | Status |
+| --- | --- | --- | --- |
+| `/veritytrail/`, `/apps/` (2026-11-25) | Release Candidate `0.1.0` for Windows x64; source and builds not public yet; badge "Source pending". No test-count figure is published until a public CI run or report can be linked. | Transparency label "Source pending" | Unverifiable metric removed, test-enforced |
 
 ## Excluded projects
 
@@ -107,4 +124,4 @@ Each hit needs a documented reason or removal. “No partnership” and “not o
 
 ## Axiom site (vendored)
 
-`public/axiom/` is synced automatically from https://github.com/OpenDKG/Axiom-Website `main` by `opendkg-sync[bot]` (`rsync --delete`), most recently at `1f0ff20` (2026-11-21). Axiom product, platform, evidence and download claims are maintained and reviewed in that repository. The 2026-11-21 `#download`/`#platforms` release-availability copy is applied upstream there and arrives here through the sync. The only downstream-local changes remain `canonical`, `og:url` and an absolute `og:image` for the `/axiom/` path. Do not edit `public/axiom/` directly without mirroring the change upstream first.
+`axiom/` is vendored from the Axiom site's upstream source. Axiom product, platform, evidence and download claims are maintained and reviewed upstream. The 2026-11-25 release-status wording below is applied here and must be mirrored upstream before the next sync, or the sync will revert it. The only other downstream-local changes are `canonical`, `og:url` and an absolute `og:image` for the `/axiom/` path.

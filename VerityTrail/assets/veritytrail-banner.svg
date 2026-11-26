@@ -60,8 +60,8 @@
   <text x="1065" y="76" text-anchor="middle" fill="#8EB8EE" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" font-weight="700" letter-spacing="0.8">RC 0.1.0 · WIN x64</text>
 
   <rect x="1154" y="56" width="182" height="32" rx="6" fill="#152E22" stroke="#2D6A4A" stroke-width="1"/>
-  <circle cx="1174" cy="72" r="4" fill="#4ADE80"/>
-  <text x="1252" y="76" text-anchor="middle" fill="#4ADE80" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" font-weight="700" letter-spacing="0.6">180/180 TESTS PASS</text>
+  <circle cx="1167" cy="72" r="4" fill="#4ADE80"/>
+  <text x="1255" y="76" text-anchor="middle" fill="#4ADE80" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" font-weight="700" letter-spacing="0.6">RELEASE CANDIDATE</text>
 
   <!-- 5-Step Pipeline Cards -->
   <!-- Step 1: Projects -->

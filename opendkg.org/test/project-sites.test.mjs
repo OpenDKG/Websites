@@ -126,3 +126,79 @@ test("homepage and /apps/ directory list all project sites", () => {
     assert.ok(appsHtml.includes(`href="${route}"`), `/apps/ missing ${route}`);
   }
 });
+
+const read = (rel) => readFileSync(path.join(distDir, rel), "utf8");
+const visibleText = (html) => html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
+
+test("project sites make no open-source, availability or metric claims they cannot back up", () => {
+  for (const slug of SITES) {
+    const text = visibleText(read(`${slug}/index.html`));
+    assert.doesNotMatch(text, /Built in the open/i, `${slug}: source is not public`);
+    assert.doesNotMatch(text, /\b\d+\/\d+ (?:automated )?tests passing/i, `${slug}: unlinked test metric`);
+    assert.doesNotMatch(text, /100% private/i, `${slug}: absolute privacy claim`);
+  }
+  const desktop = visibleText(read("desktop/index.html"));
+  assert.doesNotMatch(desktop, /Get Desktop/, "no download CTA without a downloadable build");
+  assert.match(desktop, /Planned · Apple Silicon/);
+  assert.match(desktop, /Planned · x64 · AppImage/);
+  assert.match(visibleText(read("graph/index.html")), /optional DKG bridge, the assets you choose to bridge leave your device/);
+});
+
+test("project sites never call an unpublished build available or the source open", () => {
+  for (const slug of SITES) {
+    const text = visibleText(read(`${slug}/index.html`));
+    assert.doesNotMatch(text, /Windows x64 available|Available on Windows|Available in v\d/i, `${slug}: build is not public`);
+    assert.doesNotMatch(text, /Built for Windows · macOS · Linux|Windows, macOS & Linux ·/i, `${slug}: macOS/Linux are planned`);
+    assert.doesNotMatch(text, /open-source project|independent open-source/i, `${slug}: source is not public yet`);
+    assert.doesNotMatch(read(`${slug}/index.html`), />Open source</, `${slug}: nav label implies public source`);
+  }
+});
+
+test("Desktop, Graph and VerityTrail use a status label whose definition matches non-public source", () => {
+  const transparency = visibleText(read("transparency/index.html"));
+  assert.match(transparency, /Source pending In active development; source and builds are not public yet/);
+  const apps = read("apps/index.html");
+  for (const badge of ["v0.5.0 · Source pending", "v0.5.0-pre · Source pending", "RC 0.1.0 · Source pending"]) {
+    assert.ok(apps.includes(badge), `missing badge ${badge}`);
+  }
+});
+
+test("every page that links the privacy policy is inside the policy's stated scope", () => {
+  const privacy = read("privacy/index.html");
+  const scope = privacy.match(/<h2>1\. Scope and controller<\/h2>\s*<p>([\s\S]*?)<\/p>/)?.[1] || "";
+  const scopedTrees = new Set([...scope.matchAll(/<strong>\/([a-z0-9-]+)\/<\/strong>/gi)].map((m) => m[1].toLowerCase()));
+  const outside = [];
+  const walk = (dir) => {
+    for (const entry of readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) walk(full);
+      else if (entry.name.endsWith(".html")) {
+        const rel = path.relative(distDir, full).split(path.sep).join("/");
+        const html = readFileSync(full, "utf8");
+        if (!/href="(?:https:\/\/opendkg\.org)?\/privacy\/"/.test(html)) continue;
+        const top = rel.includes("/") ? rel.split("/")[0].toLowerCase() : "";
+        const projectTree = ["axiom", "desktop", "graph", "veritytrail"].includes(top);
+        if (projectTree && !scopedTrees.has(top)) outside.push(rel);
+      }
+    }
+  };
+  walk(distDir);
+  assert.deepEqual(outside, [], `pages link /privacy/ but are outside its scope: ${outside.join(", ")}`);
+  assert.match(privacy, /opendkg_privacy_notice_v1/, "localStorage flag must be disclosed");
+  for (const product of ["OpenDKG Desktop application", "DKG Graph Local application", "VerityTrail application"]) {
+    assert.ok(privacy.includes(product), `missing policy section: ${product}`);
+  }
+});
+
+test("VerityTrail pages and images show no unlinked test-count figure", () => {
+  const sourceDir = path.resolve(opendkgDir, "..", "VerityTrail");
+  const files = readdirSync(sourceDir, { recursive: true }).filter((rel) => /\.(html|svg)$/i.test(rel));
+  assert.ok(files.some((rel) => rel.endsWith(".html")), "no VerityTrail HTML found");
+  assert.ok(files.some((rel) => rel.endsWith(".svg")), "no VerityTrail SVG found");
+  const metric = /\d+\/\d+\s*tests?/i;
+  const hits = files.filter((rel) => {
+    const raw = readFileSync(path.join(sourceDir, rel), "utf8");
+    return metric.test(raw) || metric.test(visibleText(raw));
+  });
+  assert.deepEqual(hits, [], `unlinked test metric in: ${hits.join(", ")}`);
+});
