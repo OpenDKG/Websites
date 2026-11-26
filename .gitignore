@@ -21,3 +21,8 @@ Thumbs.db
 .idea/
 .vscode/
 *.swp
+
+# Environment files (keep the documented example)
+.env
+.env.*
+!.env.example
