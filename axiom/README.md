@@ -40,7 +40,7 @@ Keep the canonical and `og:` URLs in `index.html` and `pentesting.html` absolute
 
 ## Before launch
 
-- `#download` links the public CTA to `https://github.com/OpenDKG/Axiom/releases/latest` (Windows x64 release; Ubuntu 24.04 amd64 and Intel macOS previews) and notes `SHA256SUMS.txt`. Keep it on public `OpenDKG/Axiom`, never the private canonical upstream. Re-check the platform and risk wording when the release matrix changes.
+- `#download` links the public CTA to `https://github.com/OpenDKG/Axiom/releases/latest` (Windows x64 development build pending clean-machine QA; Ubuntu 24.04 amd64 and Intel macOS previews) and notes `SHA256SUMS.txt`. Keep it on public `OpenDKG/Axiom`, never the private canonical upstream. Re-check the platform and risk wording when the release matrix changes.
 - Confirm the public repository URL, source disclosure, brand/trademark permissions, vulnerability reporting route and release checksums/signatures if applicable.
 - Keep protection and offline claims synchronized with the actual Axiom platform test matrix. A hook decision is not equivalent to an OS-enforced block. Existing local rules and cached knowledge are not evidence of a fresh DKG sync.
 - Do not turn approved reporter observations into curator-verified threat claims.

@@ -189,3 +189,16 @@ test("every page that links the privacy policy is inside the policy's stated sco
     assert.ok(privacy.includes(product), `missing policy section: ${product}`);
   }
 });
+
+test("VerityTrail pages and images show no unlinked test-count figure", () => {
+  const sourceDir = path.resolve(opendkgDir, "..", "VerityTrail");
+  const files = readdirSync(sourceDir, { recursive: true }).filter((rel) => /\.(html|svg)$/i.test(rel));
+  assert.ok(files.some((rel) => rel.endsWith(".html")), "no VerityTrail HTML found");
+  assert.ok(files.some((rel) => rel.endsWith(".svg")), "no VerityTrail SVG found");
+  const metric = /\d+\/\d+\s*tests?/i;
+  const hits = files.filter((rel) => {
+    const raw = readFileSync(path.join(sourceDir, rel), "utf8");
+    return metric.test(raw) || metric.test(visibleText(raw));
+  });
+  assert.deepEqual(hits, [], `unlinked test metric in: ${hits.join(", ")}`);
+});
