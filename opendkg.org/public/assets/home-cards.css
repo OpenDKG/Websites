@@ -146,9 +146,6 @@
 }
 
 @media (max-width: 620px) {
-  .nav a:not(.nav-github):not([href="/apps/"]) {
-    display: none;
-  }
   .index-row {
     padding: 13px 16px;
   }
